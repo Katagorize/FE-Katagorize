@@ -3,13 +3,23 @@ import Particles from 'react-particles-js';
 import pParams from '../particles/particles';
 
 class HomePage extends React.Component {
-
     state = {
+        valid_students: ['SemraSh', 'steele87', 'jaderyan', 'christopher-peers', 'jdunsby', 'MtlJ1991', 'AnatDean', 'JacDarby', 'najmi-smile', 's-Hale', 'jenniredfield', 'starfrogsplash', 'LukeFenn', 'rogersop', 'amysews', 'ajmc1992', 'P-Copley', 'dzewelina', 'megan-field', 'Tomathon', 'Thermo5', 'barks1212', 'hakbar0', 'SamuelEdwardLea', 'AarOmoPer'],
         username: '',
         passowrds: '',
         message: '',
         user_image: 'https://cdn1.iconfinder.com/data/icons/simple-icons/256/github-256-black.png'
     }
+
+    // fetchValidStudents(){
+    //     fetch('northcoders-valid-student-api') 
+    //     .then(buffer=>{buffer.json()})
+    //     .then(res => {
+    //         this.setState({
+    //             valid_students: valid_students.push(res.githubNames)
+    //         })
+    //     })
+    // }
 
     changeUsernameValue = (event) => {
         this.setState({
@@ -28,7 +38,7 @@ class HomePage extends React.Component {
         return fetch(`https://api.github.com/users/${this.state.username}`)
             .then((resBuffer) => resBuffer.json())
             .then((res) => {
-                if (res.login && res.login.toLowerCase() === this.state.username.toLowerCase()) {
+                if (res.login && res.login.toLowerCase() === this.state.username.toLowerCase() && this.state.valid_students.includes(res.login)) {
                     this.setState({
                         message: '√',
                         username: res.login,
@@ -36,7 +46,7 @@ class HomePage extends React.Component {
                     })
                 } else {
                     this.setState({
-                        message: 'this user is not on github'
+                        message: 'this username is not valid'
                     })
                 }
             })
