@@ -1,0 +1,39 @@
+.KataPage {
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(50px, auto);
+    font-size: 35px;
+    color: white;
+    height:100%;
+    background: url('/home/mtlj1991/Documents/Northcoders/project-phase/front-end/FE-Katagorize/src/img/books2.jpg') no-repeat center;
+    background-size: cover; 
+}
+
+.title{
+    text-align: center;
+    grid-column-start: 4;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    color:white;
+    
+  }
+
+  .KataList{
+    background-color: rgba(0, 0, 0, 0.253);
+    grid-column-start: 2;
+    grid-column-end: 6;
+    grid-row-start: 2;
+    grid-row-end: 13;
+    font-size: 25px;
+  }
+
+  .results {
+    background-color: rgba(0, 0, 0, 0.253);
+    grid-column-start: 6;
+    grid-column-end: 12;
+    grid-row-start: 2;
+    grid-row-end: 13;
+  }
