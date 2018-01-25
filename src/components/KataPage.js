@@ -1,7 +1,7 @@
 import React from 'react';
 import Particles from 'react-particles-js';
 import pParams from '../particles/particles';
-import '/home/mtlj1991/Documents/Northcoders/project-phase/front-end/FE-Katagorize/src/css/style.css'
+import '../css/style.css'
 import CircularProgressbar from 'react-circular-progressbar';
 
 
