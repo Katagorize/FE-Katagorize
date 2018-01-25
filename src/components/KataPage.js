@@ -54,7 +54,7 @@ class KataPage extends React.Component {
                         initialAnimation={true}
                         strokeWidth={4}
                         textForPercentage={(percentage) => {
-                            return percentage === 100 ? `Woo!!` : `${this.state.fails}`;
+                            return percentage === 100 ? `Woo!!` : `${this.state.fails} / ${this.state.tests}`;
                         }}
                     />
                     <p>Tests failed</p>
@@ -67,7 +67,7 @@ class KataPage extends React.Component {
                         initialAnimation={true}
                         strokeWidth={5}
                         textForPercentage={(percentage) => {
-                            return percentage === 100 ? `Woo!!` : `${this.state.passes}`;
+                            return percentage === 100 ? `Woo!!` : `${this.state.passes} / ${this.state.tests}`;
                         }}
                         classForPercentage={(percentage) => {
                             return percentage === 100 ? 'complete' : 'incomplete';

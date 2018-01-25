@@ -61,7 +61,7 @@
   }
   
   .CircularProgressbar.CircularProgressbar-inverted .CircularProgressbar-trail {
-    stroke: hsl(135, 75%, 44%);
+    stroke: transparent;
 
   }
 
