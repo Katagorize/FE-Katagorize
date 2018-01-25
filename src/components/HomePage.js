@@ -7,17 +7,23 @@ class HomePage extends React.Component {
     state = {
         username: '',
         passowrds: '',
-        value: '',
         message: ''
     }
 
-    changeValue = (event) => {
+    changeUsernameValue = (event) => {
         this.setState({
-            value: event.target.value
+            username: event.target.value
+        })
+        console.log(this.state.username)
+    }
+
+    changePasswordValue = (event) => {
+        this.setState({
+            password: event.target.value
         })
     }
 
-    validation = (event) => {
+    githubUsernameValidation = (event) => {
         event.preventDefault()
         return fetch(`https://api.github.com/users/${this.state.value}`)
             .then((resBuffer) => resBuffer.json())
@@ -29,12 +35,13 @@ class HomePage extends React.Component {
                     })
                 } else {
                     this.setState({
-                        message: 'username is not on github'
+                        message: 'this user is not on github'
                     })
                 }
             })
             .catch(console.log);
     };
+
 
     render() {
         return (
@@ -64,22 +71,13 @@ class HomePage extends React.Component {
                     <div >
                         <form>
                             <label>github username</label><br />
-                            <input type="text" placeholder="enter username" value={this.state.value} onChange={this.changeValue} />
+                            <input className='formText' type="username" placeholder="enter username" username={this.state.username} onChange={this.changeValue} />
                             <p>{this.state.message}</p>
                             <label>Password</label>
-                            <input type="text" placeholder="enter password" name="enterPassword" />
-                            <button onClick={this.validation}>login</button>
+                            <input className='formText' type="password" placeholder="enter password" name="enterPassword" password={this.state.password} onChange={this.changePasswordValue}/>
+                            <button onClick={this.githubUsernameValidation}>login</button>
                         </form>
                     </div>
-                    {/* <form>
-                        <div>
-                            <label>Username</label>
-                            <input type="text" placeholder="enter username" name="enterUsername" />
-                            <label>Password</label>
-                            <input type="text" placeholder="enter password" name="enterPassword" />
-                            <button type="submit">Login</button>
-                        </div>
-                    </form> */}
                 </div>
             </div>
 
@@ -88,54 +86,3 @@ class HomePage extends React.Component {
 }
 
 export default HomePage;
-
-
-// state = {
-//     value: '',
-//     message: ''
-//   }
-
-//   changeValue = (event) => {
-//     console.log(event.target.value)
-//     this.setState({
-//       value: event.target.value
-//     })
-//   }
-
-//   validation = (event) => {
-//     event.preventDefault()
-//     return fetch(`https://api.github.com/users/${this.state.value}`)
-//       .then((resBuffer) => resBuffer.json())
-//       .then((res) => {
-//         if (res.login) res.login = res.login.toLowerCase()
-//         if (res.login && res.login === this.state.value) {
-//           this.setState({
-//             message: '√'
-//           })
-//         } else {
-//           this.setState({
-//             message: 'username is not on github'
-//           })
-//         }
-//       })
-//       .catch(console.log);
-//   };
-
-//   render() {
-
-//     return (
-//       <div>
-
-//         <div >
-//           <form>
-//             <label>github username</label><br />
-//             <input value={this.state.value} onChange={this.changeValue} />
-//             <p>{this.state.message}</p>
-//             <button onClick={this.validation}>check</button>
-//           </form>
-//         </div>
-//       </div>
-
-
-//     );
-//   }

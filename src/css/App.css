@@ -89,7 +89,7 @@
   
 }
 
-input[type=text], input[type=password] {
+.formText {
   width: 90%;
   padding: 12px 20px;
   margin: 8px 0;
