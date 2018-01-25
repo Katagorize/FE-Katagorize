@@ -13,6 +13,14 @@ class HomePage extends React.Component {
         return (
             <div className='homeMain'>
 
+<div class="topnav" id="myTopnav">
+            <a href="/" class="active"><i class="fa fa-home" aria-hidden="true"></i></a>
+            <a href="/kata">Katas</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
+            </div>
+
 <div id="particles-js" className='siteBackground'>
           <Particles params={pParams} />
 </div>

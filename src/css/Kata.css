@@ -127,7 +127,7 @@
 
 /* Add an active class to highlight the current page */
 .active {
-    background-color: #4CAF50;
+    background-color: rgba(21, 124, 24, 0.623);
     color: white;
 }
 
