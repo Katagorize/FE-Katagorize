@@ -69,7 +69,7 @@ class KataPage extends React.Component {
 
 
                 <div className='circleDiv'>
-                    <CircularProgressbar percentage={80} 
+                    <CircularProgressbar percentage={100 / this.state.tests * this.state.passes} 
                         strokeWidth={5}
                         Clockwise
                         initialAnimation={true}
