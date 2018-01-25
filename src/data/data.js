@@ -2,9 +2,9 @@ let data = {
     "stats": {
       "suites": 1,
       "tests": 5,
-      "passes": 0,
+      "passes": 3,
       "pending": 0,
-      "failures": 5,
+      "failures": 2,
       "start": "2018-01-24T16:04:50.868Z",
       "end": "2018-01-24T16:04:50.872Z",
       "duration": 4

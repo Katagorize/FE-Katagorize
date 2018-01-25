@@ -8,6 +8,7 @@ import data from '../data/data'
 class KataPage extends React.Component {
 
     state = {
+        tests: data.stats.tests,
         passes: data.stats.passes,
         fails: data.stats.failures
     }
@@ -38,7 +39,7 @@ class KataPage extends React.Component {
              <h4>Daaaaaaata</h4>
 
                 <div className='circleDiv'>
-                    <CircularProgressbar percentage={this.state.fails ? 100 / this.state.fails : 0} 
+                    <CircularProgressbar percentage={100 / this.state.tests * this.state.fails} 
                         strokeWidth={5}
                         Clockwise
                         initialAnimation={true}
@@ -51,7 +52,7 @@ class KataPage extends React.Component {
                 </div>
 
                  <div className='circleDiv'>
-                    <CircularProgressbar percentage={this.state.passes ? 100 / this.state.passes : 0} 
+                    <CircularProgressbar percentage={100 / this.state.tests * this.state.passes} 
                         strokeWidth={5}
                         Clockwise
                         initialAnimation={true}
