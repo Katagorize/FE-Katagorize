@@ -1,0 +1,116 @@
+.App {
+  /* text-align: center;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(50px, auto); */
+}
+
+
+
+.siteBackground {
+  grid-column-start: 1;
+  grid-column-end: 13;
+  grid-row-start: 1;
+  grid-row-end: 20;
+  height:100%;
+  background: url('./img/books2.jpg') no-repeat center;
+  background-size: cover; 
+}
+
+.homeMain {
+  text-shadow: 3px 4px 3px rgba(0, 0, 0, 0.455),
+  0px 8px 13px rgba(0,0,0,0.1),
+  0px 18px 23px rgba(0,0,0,0.1);
+
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(50px, auto);
+  font-size: 35px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.title{
+  text-align: center;
+  grid-column-start: 4;
+  grid-column-end: 9;
+  grid-row-start: 3;
+  grid-row-end: 5;
+  color:white;
+  
+}
+
+.WhatWeDo{
+  /* background-color: rgba(221, 207, 207, 0.219); */
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 5;
+  grid-row-end: 8;
+  font-size: 25px;
+  color:white;
+
+}
+
+.WhoWeAre {
+  /* background-color: rgba(221, 207, 207, 0.219); */
+  grid-column-start: 5;
+  grid-column-end: 8;
+  grid-row-start: 5;
+  grid-row-end: 8;
+  font-size: 25px;
+  color:white;
+
+
+}
+
+.AppDetails {
+  /* background-color: rgba(221, 207, 207, 0.219); */
+  grid-column-start: 8;
+  grid-column-end: 11;
+  grid-row-start: 5;
+  grid-row-end: 8;
+  font-size: 25px;
+  color:white;
+
+
+}
+
+.loginForm {
+  border-radius: 10px;
+  grid-column-start: 3;
+  grid-column-end: 10;
+  grid-row-start: 8;
+  grid-row-end: 13;
+  font-size: 20px;
+  opacity: 0.8;
+  
+}
+
+input[type=text], input[type=password] {
+  width: 90%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+button {
+  background-color: silver;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 50%;
+}
+
+button:hover {
+  opacity: 0.8;
+  background-color: #b30000;
+}
