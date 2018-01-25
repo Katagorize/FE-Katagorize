@@ -45,6 +45,8 @@
     text-align: center;
     background-color: rgba(0, 0, 0, 0.253);
     font-size: 15px;
+    display: block;
+
 
   }
 
@@ -54,8 +56,7 @@
     font-size: 25px;
   }
 
-  .cirlces {
-    padding-right: 10px;
-    padding-left: 10px;
-    display: inline-block;
+  .circleDiv {
+   display: inline-block;
+   width: 30%;
   }
