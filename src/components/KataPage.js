@@ -15,7 +15,7 @@ class KataPage extends React.Component {
     
     
     render() {
-        console.log(this.state.passes, '*******', this.state.fails)
+        console.log(data)
 
         return (
             
@@ -27,7 +27,7 @@ class KataPage extends React.Component {
 
 
              <div className='KataList'>
-                 <h5>Your Katas</h5>
+                 <h4>Your Katas</h4>
                  <ul>
                      <li>PigLatin</li>
                      <li>sumSonsecutives</li>
@@ -77,6 +77,20 @@ class KataPage extends React.Component {
                     <p>Percentage complete</p>
                 </div>
 
+                <div className='dataBox'>
+                        {data.failures.map((element) => {
+                            return (
+                            <div className='testData'>
+                            <h6>{element.title}</h6>
+                            <div className='fails'>
+                            <i class="fa fa-times-circle" aria-hidden="true"></i><p>...{element.err.message}</p>
+                            </div>
+                            </div>
+                            )
+                        })}
+                
+
+                </div>
              
 
              </div>
