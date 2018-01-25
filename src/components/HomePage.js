@@ -7,14 +7,14 @@ class HomePage extends React.Component {
     state = {
         username: '',
         passowrds: '',
-        message: ''
+        message: '',
+        user_image: 'https://cdn1.iconfinder.com/data/icons/simple-icons/256/github-256-black.png'
     }
 
     changeUsernameValue = (event) => {
         this.setState({
             username: event.target.value
         })
-        console.log(this.state.username)
     }
 
     changePasswordValue = (event) => {
@@ -25,13 +25,14 @@ class HomePage extends React.Component {
 
     githubUsernameValidation = (event) => {
         event.preventDefault()
-        return fetch(`https://api.github.com/users/${this.state.value}`)
+        return fetch(`https://api.github.com/users/${this.state.username}`)
             .then((resBuffer) => resBuffer.json())
             .then((res) => {
-                if (res.login && res.login.toLowerCase() === this.state.value.toLowerCase()) {
+                if (res.login && res.login.toLowerCase() === this.state.username.toLowerCase()) {
                     this.setState({
                         message: '√',
-                        username: res.login
+                        username: res.login,
+                        user_image: res.avatar_url
                     })
                 } else {
                     this.setState({
@@ -69,12 +70,13 @@ class HomePage extends React.Component {
 
                 <div className="loginForm">
                     <div >
+                            <img src={this.state.user_image} style={{height:'75px', backgroundColor:'rgba(255, 255, 255, 0.233)', borderRadius:'50%'}}/>
                         <form>
                             <label>github username</label><br />
-                            <input className='formText' type="username" placeholder="enter username" username={this.state.username} onChange={this.changeValue} />
+                            <input  type="text" placeholder="enter username" username={this.state.username} onChange={this.changeUsernameValue} />
                             <p>{this.state.message}</p>
                             <label>Password</label>
-                            <input className='formText' type="password" placeholder="enter password" name="enterPassword" password={this.state.password} onChange={this.changePasswordValue}/>
+                            <input  type="password" placeholder="enter password" name="enterPassword" password={this.state.password} onChange={this.changePasswordValue}/>
                             <button onClick={this.githubUsernameValidation}>login</button>
                         </form>
                     </div>
