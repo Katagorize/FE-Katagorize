@@ -3,23 +3,20 @@ import Particles from 'react-particles-js';
 import pParams from '../particles/particles';
 import '/home/mtlj1991/Documents/Northcoders/project-phase/front-end/FE-Katagorize/src/css/style.css'
 import CircularProgressbar from 'react-circular-progressbar';
-
+import data from '../data/data'
 
 
 class KataPage extends React.Component {
 
     state = {
-        num: 0
-      }
-      
-      numChange = () => {
-        this.setState ({
-          num: (this.state.num+10) % 101
-        })
-        console.log(this.state.num)
-       }
+        passes: data.stats.passes,
+        fails: data.stats.failures
+    }
 
+    
+    
     render() {
+        console.log(this.state.passes, '*******', this.state.fails)
 
         return (
             
@@ -39,31 +36,50 @@ class KataPage extends React.Component {
              </div>
 
              <div className='results'>
-             <p>testetstetststetstes</p>
-             <CircularProgressbar percentage={60} 
-          
-                strokeWidth={5}
-                Clockwise
-                initialAnimation={true}
-                strokeWidth={8}
-             />
+             <h4>Daaaaaaata</h4>
 
-
-            <CircularProgressbar percentage={this.state.num} 
-          
+            <div className='circles'>
+             <CircularProgressbar percentage={100 / this.state.fails} 
                 strokeWidth={5}
                 Clockwise
                 initialAnimation={true}
                 strokeWidth={8}
                 textForPercentage={(percentage) => {
-                    return percentage === 100 ? `Woo!!` : `${this.state.num}`;
+                    return percentage === 100 ? `Woo!!` : `${this.state.fails}`;
+                }}
+             />
+             <p>Tests failed</p>
+
+
+            <CircularProgressbar percentage={100 / this.state.passes} 
+                strokeWidth={5}
+                Clockwise
+                initialAnimation={true}
+                strokeWidth={8}
+                textForPercentage={(percentage) => {
+                    return percentage === 100 ? `Woo!!` : `${this.state.passes}`;
                 }}
                 classForPercentage={(percentage) => {
                     return percentage === 100 ? 'complete' : 'incomplete';
                 }}
-            />
-          <button type="button" onClick={this.numChange}>Click Me!</button>
+                />
+                <p>Tests Passed</p>
+
+
+
+             <CircularProgressbar percentage={60} 
+                strokeWidth={5}
+                Clockwise
+                initialAnimation={true}
+                strokeWidth={8}
+             />
+             <p>Percentage complete</p>
+
              </div>
+
+             </div>
+
+
 
         
         </div>

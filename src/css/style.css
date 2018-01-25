@@ -11,13 +11,17 @@
      *
      * If you're not using "display: flex", you can remove this style.
      */
-    width: 30%;
+    width: 15%;
+    padding-right: 10px;
+    padding-left: 10px;
   }
   
   .CircularProgressbar .CircularProgressbar-path{
     stroke: hsl(135, 75%, 44%);
     stroke-linecap: round;
     transition: stroke-dashoffset 2s ease 0.3s;
+    padding-right: 10px;
+    padding-left: 10px;
   }
   
   .CircularProgressbar .CircularProgressbar-trail{
@@ -26,7 +30,7 @@
 
 
   .CircularProgressbar .CircularProgressbar-text {
-    fill: #22610e;
+    fill: #f3f8f2;
     font-size: 20px;
     dominant-baseline: middle;
     text-anchor: middle;
