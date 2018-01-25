@@ -31,7 +31,7 @@ class KataPage extends React.Component {
             </div>
                 
              <div className='title'>
-                <h1>KataLyst</h1>
+                <h2>KataLyst testing area</h2>
              </div>
 
 
@@ -44,14 +44,15 @@ class KataPage extends React.Component {
              </div>
 
              <div className='results'>
-             <h4>Daaaaaaata</h4>
+             <h4>Kata data</h4>
 
                 <div className='circleDiv'>
                     <CircularProgressbar percentage={100 / this.state.tests * this.state.fails} 
+                        className="CircularProgressbar-inverted"
                         strokeWidth={5}
                         Clockwise
                         initialAnimation={true}
-                        strokeWidth={8}
+                        strokeWidth={4}
                         textForPercentage={(percentage) => {
                             return percentage === 100 ? `Woo!!` : `${this.state.fails}`;
                         }}
@@ -64,7 +65,7 @@ class KataPage extends React.Component {
                         strokeWidth={5}
                         Clockwise
                         initialAnimation={true}
-                        strokeWidth={8}
+                        strokeWidth={5}
                         textForPercentage={(percentage) => {
                             return percentage === 100 ? `Woo!!` : `${this.state.passes}`;
                         }}
@@ -81,7 +82,7 @@ class KataPage extends React.Component {
                         strokeWidth={5}
                         Clockwise
                         initialAnimation={true}
-                        strokeWidth={8}
+                        strokeWidth={5}
                     />
                     <p>Percentage complete</p>
                 </div>
@@ -90,10 +91,7 @@ class KataPage extends React.Component {
                         {data.failures.map((element) => {
                             return (
                             <div className='testData'>
-                            <h6>{element.title}</h6>
-                            <div className='fails'>
-                            <i class="fa fa-times-circle" aria-hidden="true"></i><p>...{element.err.message}</p>
-                            </div>
+                                                       <i class="fa fa-times-circle" aria-hidden="true"></i><p>{element.title}</p>
                             </div>
                             )
                         })}

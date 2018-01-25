@@ -24,7 +24,7 @@
   }
   
   .CircularProgressbar .CircularProgressbar-trail{
-    stroke: #dd1010;
+    stroke: rgb(160, 17, 17);
   }
 
 
@@ -57,11 +57,12 @@
   }
   
   .CircularProgressbar.CircularProgressbar-inverted .CircularProgressbar-path {
-    stroke: #fff;
+    stroke: rgb(160, 17, 17);
   }
   
   .CircularProgressbar.CircularProgressbar-inverted .CircularProgressbar-trail {
-    stroke: transparent;
+    stroke: hsl(135, 75%, 44%);
+
   }
 
   .progressbar-red .CircularProgressbar-path { stroke: red; }

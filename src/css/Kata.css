@@ -73,19 +73,21 @@
 
   .testData h6 {
       font-size: 20px;
-      background-color: rgba(248, 4, 24, 0.253);
+      background-color: rgba(0, 0, 0, 0.253);
       text-align: left;
   }
 
   .testData p {
     font-size: 15px;
-    background-color: rgba(248, 4, 24, 0.253);
+    background-color: rgba(0, 0, 0, 0.253);
     text-align: left;
 }
 
-.fails i{
+.testData i{
     float:left;
     font-size: 0.5em;
+    padding-right: 15px;
+    color: rgb(163, 24, 24);
 }
 
 
