@@ -2,19 +2,20 @@ import React, { Component } from 'react';
 import './App.css';
 import Particles from 'react-particles-js'
 import pParams from './particles/particles'
-import HomePage from './HomePage';
+import HomePage from './components/HomePage';
+import { BrowserRouter, Route } from "react-router-dom";
 class App extends Component {
 
 
   render() {
 
     return (
-      <div className="App">
 
-          <HomePage />
-
-
+<BrowserRouter>
+        <div className="App">
+        <Route exact path="/" component={HomePage} />
         </div>
+</BrowserRouter>
 
 
      

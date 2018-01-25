@@ -1,6 +1,6 @@
 import React from 'react';
 import Particles from 'react-particles-js';
-import pParams from './particles/particles';
+import pParams from '../particles/particles';
 
 class HomePage extends React.Component {
 
