@@ -7,24 +7,23 @@ import pParams from './particles/particles'
 import HomePage from './components/HomePage';
 import KataPage from './components/KataPage';
 
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 class App extends Component {
 
 
   render() {
 
     return (
-
-<BrowserRouter>
+      <div>
+      <BrowserRouter>
         <div className="App">
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/kata" component={KataPage} />
-
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/users/:username" component={KataPage} />
+          </Switch>
         </div>
-</BrowserRouter>
-
-
-     
+      </BrowserRouter>
+      </div>
     );
   }
 }
