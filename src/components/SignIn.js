@@ -33,6 +33,7 @@ class SignIn extends Component {
   //    if(userData && this.username === userData.username) {
   //      this.setState({
   //        validUser: true,
+  //        disabled: false,
   //      })
   //    } else {
   //      this.setState({
@@ -50,7 +51,6 @@ class SignIn extends Component {
       .then((res) => {
         if (res.login && res.login.toLowerCase() === this.state.username.toLowerCase() && this.state.valid_students.includes(res.login)) {
           this.setState({
-            disabled: false,
             username: res.login,
             user_image: res.avatar_url
           })
