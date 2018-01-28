@@ -3,7 +3,7 @@ import { Redirect } from 'react-router'
 
 class SignIn extends Component {
   state = {
-    valid_students: ['SemraSh', 'steele87', 'jaderyan', 'christopher-peers', 'jdunsby', 'MtlJ1991', 'AnatDean', 'JacDarby', 'najmi-smile', 's-Hale', 'jenniredfield', 'starfrogsplash', 'LukeFenn', 'rogersop', 'amysews', 'ajmc1992', 'P-Copley', 'dzewelina', 'megan-field', 'Tomathon', 'Thermo5', 'barks1212', 'hakbar0', 'SamuelEdwardLea', 'AarOmoPer'],
+    valid_students: [],
     username: '',
     passowrd: '',
     user_image: 'https://cdn1.iconfinder.com/data/icons/simple-icons/256/github-256-black.png',
@@ -44,7 +44,7 @@ class SignIn extends Component {
   // }
 
 
-  checkGithubUsername = (event) => {
+  checkUsername = (event) => {
     event.preventDefault()
     return fetch(`https://api.github.com/users/${this.state.username}`)
       .then((resBuffer) => resBuffer.json())

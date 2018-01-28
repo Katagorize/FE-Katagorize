@@ -13,40 +13,34 @@ class SignUp extends Component {
     passwordCheck: ''
   }
 
-  changeUsernameValue = (event) => {
-    this.setState({
-      username: event.target.value
-    })
+  componentDidMount() {
+    this.fetchValidStudents()
   }
 
-  savePassword = (event) => {
-    this.setState({
-      password: event.target.value
-    });
-  }
 
   checkPassword = (event) => {
-    console.log(event.target.value)
     if ((/(?=.*[0-9])[a-zA-Z0-9]{8,}\w+/).test(event.target.value)) {
       this.setState({
+        password: event.target.password,
         passwordCheck: '✔️',
         disabled: false
       })
     }
     else {
       this.setState({
+        password: event.target.password,
         passwordCheck: '❌',
         disabled: true
       })
     }
   }
 
-
-  submitForm = (event) => {
-    event.preventDefault()
-    this.setState({ redirect: true })
+  changeUsername = (event) => {
+    console.log(event.target.value)
+    this.setState({
+      username: event.target.value
+    })
   }
-
 
   checkGithubUsername = (event) => {
     event.preventDefault()
@@ -64,21 +58,28 @@ class SignUp extends Component {
       .catch(console.log);
   };
 
+  submitForm = (event) => {
+    event.preventDefault()
+    this.setState({ redirect: true })
+  }
+
+
+
   render() {
     return (
         <div className="loginForm">
           <div >
-            <form className='signinForm'>
+            <form className='signinForm' onSubmit={this.submitForm}>
               <img src={this.state.user_image} style={{ height: '75px', backgroundColor: 'rgba(255, 255, 255, 0.233)', borderRadius: '50%' }} />
               <div className="form-group">
                 <label for="githubUsername">Github username</label>
-                <input type="username" className="form-control" placeholder="github username" username={this.state.username}  />
+                <input type="username" className="form-control" placeholder="github username" value={this.state.username} onChange={this.changeUsername} onBlur={this.checkGithubUsername} />
                 <small className="form-text text-muted">Github username</small>
               </div>
               <div className="form-group">
-                <label for="exampleInputPassword1">Password</label>
+                <label for="inputPassword">Password</label>
                 <div style={{ display: 'flex', flexDirection: 'row' }}>
-                  <input type="password" className="form-control" id="exampleInputPassword1" placeholder="password" password={this.state.password} onChange={this.savePassword} onBlur={this.checkPassword} />
+                  <input type="password" className="form-control" id="inputPassword" placeholder="password" password={this.state.password} onChange={this.checkPassword} />
                   <p>{this.state.passwordCheck}</p>
                 </div>
                 <small className="form-text text-muted">your password</small>
@@ -90,6 +91,11 @@ class SignUp extends Component {
 
         </div>
     )
+  }
+
+  fetchValidStudents = () => {
+    return fetch('the end point with all students')
+    .then()
   }
 }
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router'
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
 
@@ -10,10 +10,9 @@ class HomePage extends React.Component {
             <div className='homeMain' style={{ backgroundColor: 'black' }}>
                 <div className='title'>
                     <h1>KataLyst</h1>
-                    <SignIn/>
-                    <SignUp/>
+                    <Link to='/signin'> Sign in </Link>
+                    <Link to='/signup'> Sign Up </Link>
                 </div>
-
             </div >
         )
     }
