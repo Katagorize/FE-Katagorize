@@ -3,12 +3,11 @@ import { Redirect } from 'react-router'
 
 class SignIn extends Component {
   state = {
-    valid_students: [],
     username: '',
     passowrd: '',
     user_image: 'https://cdn1.iconfinder.com/data/icons/simple-icons/256/github-256-black.png',
     redirect: false,
-    disabled: true,
+    // disabled: true,
     passwordCheck: '',
     validUser: false,
     loginMessage: ''
@@ -49,7 +48,7 @@ class SignIn extends Component {
     return fetch(`https://api.github.com/users/${this.state.username}`)
       .then((resBuffer) => resBuffer.json())
       .then((res) => {
-        if (res.login && res.login.toLowerCase() === this.state.username.toLowerCase() && this.state.valid_students.includes(res.login)) {
+        if (res.username && res.username.toLowerCase() === this.state.username.toLowerCase() ) {
           this.setState({
             username: res.login,
             user_image: res.avatar_url
@@ -72,23 +71,22 @@ class SignIn extends Component {
             <form className='signinForm' onSubmit={this.submitForm}>
               <img src={this.state.user_image} style={{ height: '75px', backgroundColor: 'rgba(255, 255, 255, 0.233)', borderRadius: '50%' }} />
               <div className="form-group">
-                <label for="githubUsername">Github username</label>
-                <input type="username" className="form-control" placeholder="github username" username={this.state.username} onChange={this.changeUsernameValue} onBlur={this.checkGithubUsername} />
+                <label>Github username</label>
+                <input type="username" className="form-control" placeholder="github username" value={this.state.username} onChange={this.changeUsernameValue} />
                 <small className="form-text text-muted">Github username</small>
               </div>
               <div className="form-group">
-                <label for="exampleInputPassword1">Password</label>
+                <label>Password</label>
                 <div style={{ display: 'flex', flexDirection: 'row' }}>
                   <input type="password" className="form-control" id="exampleInputPassword1" placeholder="password" password={this.state.password} onChange={this.savePassword} onBlur={this.checkPassword} />
                   <p>{this.state.passwordCheck}</p>
                 </div>
                 <small className="form-text text-muted">your password</small>
               </div>
-              <button type="submit" className="btn btn-primary" disabled={this.state.disabled}>sign in</button>
+              <button type="submit" className="btn btn-primary">sign in</button>
             </form>
             {this.state.redirect && <Redirect to={`/users/${this.state.username}`} />}
           </div>
-
         </div>
     )
   }
