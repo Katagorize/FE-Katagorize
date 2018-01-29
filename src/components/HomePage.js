@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { Redirect } from 'react-router'
 import { Route, Link } from 'react-router-dom'
 import SignIn from './SignIn'
 import SignUp from './SignUp'
 
-class HomePage extends React.Component {
+class HomePage extends Component {
     render() {
         return (
             <div className='homeMain' style={{ backgroundColor: 'black' }}>
