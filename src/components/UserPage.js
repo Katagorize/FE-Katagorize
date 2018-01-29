@@ -5,15 +5,13 @@ import '../css/style.css'
 import '../css/Kata.css'
 import CircularProgressbar from 'react-circular-progressbar';
 import data from '../data/data'
-class KataPage extends React.Component {
+class UserPage extends React.Component {
 
     state = {
         tests: data.stats.tests,
         passes: data.stats.passes,
         fails: data.stats.failures
     }
-
-
 
     render() {
         console.log(data)
@@ -192,4 +190,4 @@ class KataPage extends React.Component {
     }
 }
 
-export default KataPage;
+export default UserPage;

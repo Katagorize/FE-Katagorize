@@ -5,7 +5,7 @@ import '../css/Kata.css';
 // import Particles from 'react-particles-js'
 // import pParams from './particles/particles'
 import HomePage from './HomePage';
-import KataPage from './KataPage';
+import UserPage from './UserPage';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import { BrowserRouter, Route, Switch, NavLink } from "react-router-dom";
@@ -25,7 +25,7 @@ class App extends Component {
           <Route exact path="/" component={HomePage} />
           <Route exact path='/signin' component={SignIn}/>
           <Route exact path='/signup' component={SignUp}/>
-          <Route path="/users/:username" component={KataPage} />
+          <Route path="/users/:username" component={UserPage} />
           </Switch>
         </div>
       </BrowserRouter>
