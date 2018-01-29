@@ -6,6 +6,7 @@ import '../css/Kata.css';
 // import pParams from './particles/particles'
 import HomePage from './HomePage';
 import KataPage from './KataPage';
+import KataData from './KataData';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import { BrowserRouter, Route, Switch, NavLink } from "react-router-dom";
@@ -26,6 +27,7 @@ class App extends Component {
           <Route exact path='/signin' component={SignIn}/>
           <Route exact path='/signup' component={SignUp}/>
           <Route path="/users/:username" component={KataPage} />
+          <Route path="/api/users/:user_name/katas/:kata_name/test" component={KataData} />
           </Switch>
         </div>
       </BrowserRouter>

@@ -10,9 +10,7 @@ import KataData from './KataData'
 class KataPage extends React.Component {
 
     state = {
-        tests: data.stats.tests,
-        passes: data.stats.passes,
-        fails: data.stats.failures
+        katas: []
     }
 
 
