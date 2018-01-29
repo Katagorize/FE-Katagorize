@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import katas from '../data/katas'
+import {BrowserRouter, Route, Switch, Link} from "react-router-dom";
 
 
 class Katas extends Component {
@@ -15,13 +16,25 @@ class Katas extends Component {
 
         <div className='KataList'>
           <h4>All Katas</h4>
-          <ul>
-          {this.state.katas.map((kata, key) => {
+
+          
+          {this.state.katas.map((week, key) => {
+            let weekKey = Object.keys(week)[0];
+            let kataList = week[weekKey].map((kata) => {
+              return (
+             <Link to={`/users/${this.props.username}/${kata.title}`}> <li>{kata.title}</li> </Link>
+              )
+              
+            })
             return (
-            <li key={key}>{kata.title}</li>
+              <div>
+              <ul>{weekKey}
+              {kataList}    
+              </ul>
+              </div>
             )
           })}
-          </ul>
+
         </div>
 
       </div>

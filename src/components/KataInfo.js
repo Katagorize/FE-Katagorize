@@ -11,7 +11,7 @@ class KataInfo extends Component {
   render() {
     return (
       <div>
-        <h4>Feedback for kata: {this.state.kata}</h4>
+        <h4>Feedback for kata: {this.props.match.params.kataname}</h4>
       </div>
     )
   }

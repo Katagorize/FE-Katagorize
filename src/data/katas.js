@@ -173,7 +173,7 @@ const katas =
   }]},
 
 
-  {'Week-8': [{
+  {'Week-9': [{
     "date": "2018-01-15",
     "title": "rotateMatrix"
   },
