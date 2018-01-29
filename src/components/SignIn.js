@@ -7,7 +7,7 @@ class SignIn extends Component {
     passowrd: '',
     user_image: 'https://cdn1.iconfinder.com/data/icons/simple-icons/256/github-256-black.png',
     redirect: false,
-    // disabled: true,
+    disabled: true,
     passwordCheck: '',
     validUser: false,
     loginMessage: ''
@@ -25,22 +25,25 @@ class SignIn extends Component {
     });
   }
 
-  // checkPasswordForUser = (event) => {
-  //  return fetch('database for user') 
-  //  .then(buffer => res.json(buffer))
-  //  .then(userData=>{
-  //    if(userData && this.username === userData.username) {
-  //      this.setState({
-  //        validUser: true,
-  //        disabled: false,
-  //      })
-  //    } else {
-  //      this.setState({
-  //        loginMessage: 'incorrect username or password'
-  //      })
-  //    }
-  //  })
-  // }
+  checkPasswordForUser = (event) => {
+   return fetch(`http://localhost:3001/api/users/${this.state.username}/signin`, {
+     method: 'GET',
+    //  headers: 
+   }) 
+   .then(buffer => buffer.json())
+   .then(userData=>{
+     if(userData && this.state.username === userData.username) {
+       this.setState({
+         validUser: true,
+         disabled: false,
+       })
+     } else {
+       this.setState({
+         loginMessage: 'incorrect username or password'
+       })
+     }
+   })
+  }
 
 
   checkUsername = (event) => {
@@ -78,12 +81,12 @@ class SignIn extends Component {
               <div className="form-group">
                 <label>Password</label>
                 <div style={{ display: 'flex', flexDirection: 'row' }}>
-                  <input type="password" className="form-control" id="exampleInputPassword1" placeholder="password" password={this.state.password} onChange={this.savePassword} onBlur={this.checkPassword} />
+                  <input type="password" className="form-control" id="exampleInputPassword1" placeholder="password" password={this.state.password} onChange={this.savePassword} onBlur={this.checkPasswordForUser} />
                   <p>{this.state.passwordCheck}</p>
                 </div>
                 <small className="form-text text-muted">your password</small>
               </div>
-              <button type="submit" className="btn btn-primary">sign in</button>
+              <button type="submit" className="btn btn-primary" disabled>sign in</button>
             </form>
             {this.state.redirect && <Redirect to={`/users/${this.state.username}`} />}
           </div>
