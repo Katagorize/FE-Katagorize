@@ -1,4 +1,4 @@
-katas:
+const katas =
 [
   {
     "date": "2017-11-13",
@@ -181,3 +181,5 @@ katas:
     "title": "md5Hashing"
   }
 ]
+
+export default katas;
