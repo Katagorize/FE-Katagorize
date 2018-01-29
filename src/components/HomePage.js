@@ -1,13 +1,10 @@
-import React, {Component} from 'react';
-import { Redirect } from 'react-router'
-import { Route, Link } from 'react-router-dom'
-import SignIn from './SignIn'
-import SignUp from './SignUp'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 
 class HomePage extends Component {
     render() {
         return (
-            <div className='homeMain' style={{ backgroundColor: 'black' }}>
+            <div className='homeMain'>
                 <div className='title'>
                     <h1>KataLyst</h1>
                     <Link to='/signin'> Sign in </Link>

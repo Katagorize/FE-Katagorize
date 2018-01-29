@@ -15,15 +15,12 @@ class Katas extends Component {
 
         <div className='KataList'>
           <h4>All Katas</h4>
-       
           <ul>
-            <h2>dvsvdsfsdfsf</h2>
           {this.state.katas.map((kata, key) => {
             return (
             <li key={key}>{kata.title}</li>
             )
           })}
-
           </ul>
         </div>
 

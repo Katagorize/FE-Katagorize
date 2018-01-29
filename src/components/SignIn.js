@@ -69,7 +69,7 @@ class SignIn extends Component {
         <div className="loginForm">
           <div >
             <form className='signinForm' onSubmit={this.submitForm}>
-              <img src={this.state.user_image} style={{ height: '75px', backgroundColor: 'rgba(255, 255, 255, 0.233)', borderRadius: '50%' }} />
+              <img alt='avatar url' src={this.state.user_image} style={{ height: '75px', backgroundColor: 'rgba(255, 255, 255, 0.233)', borderRadius: '50%' }} />
               <div className="form-group">
                 <label>Github username</label>
                 <input type="username" className="form-control" placeholder="github username" value={this.state.username} onChange={this.changeUsernameValue} />
