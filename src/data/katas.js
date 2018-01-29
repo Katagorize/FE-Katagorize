@@ -1,6 +1,7 @@
 const katas =
 [
-  {
+
+  {'Week-1': [{
     "date": "2017-11-13",
     "title": "pigLatin"
   },
@@ -19,8 +20,9 @@ const katas =
   {
     "date": "2017-11-17",
     "title": "dnaPairs"
-  },
-  {
+  }]},
+
+  {'Week-2': [{
     "date": "2017-11-20",
     "title": "herdTheBabies"
   },
@@ -39,8 +41,9 @@ const katas =
   {
     "date": "2017-11-24",
     "title": "passwordScore"
-  },
-  {
+  }]},
+
+  {'Week-3': [{
     "date": "2017-11-27",
     "title": "changeCalculator"
   },
@@ -59,8 +62,8 @@ const katas =
   {
     "date": "2017-12-01",
     "title": "morseCode"
-  },
-  {
+  }]},
+  {'Week-4': [{
     "date": "2017-12-04",
     "title": "uniqueAndOrdered"
   },
@@ -79,8 +82,10 @@ const katas =
   {
     "date": "2017-12-08",
     "title": "everyContainsSome"
-  },
-  {
+  }]},
+
+
+  {'Week-5': [{
     "date": "2017-12-11",
     "title": "palindrome"
   },
@@ -99,8 +104,10 @@ const katas =
   {
     "date": "2017-12-15",
     "title": "alphabetReplace"
-  },
-  {
+  }]},
+
+
+  {'Week-6': [{
     "date": "2017-12-18",
     "title": "foldArray"
   },
@@ -119,8 +126,10 @@ const katas =
   {
     "date": "2017-12-22",
     "title": "vowelShift"
-  },
-  {
+  }]},
+
+
+  {'Week-7': [{
     "date": "2018-01-01",
     "title": "romanNumeralEncoder"
   },
@@ -139,8 +148,10 @@ const katas =
   {
     "date": "2018-01-05",
     "title": "parseHexInt"
-  },
-  {
+  }]},
+
+
+  {'Week-8': [{
     "date": "2018-01-08",
     "title": "justifyLine"
   },
@@ -159,8 +170,10 @@ const katas =
   {
     "date": "2018-01-12",
     "title": "needleInHaystack"
-  },
-  {
+  }]},
+
+
+  {'Week-8': [{
     "date": "2018-01-15",
     "title": "rotateMatrix"
   },
@@ -179,7 +192,7 @@ const katas =
   {
     "date": "2018-01-19",
     "title": "md5Hashing"
-  }
+  }]},
 ]
 
 export default katas;
