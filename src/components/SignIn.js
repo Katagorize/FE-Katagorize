@@ -4,7 +4,7 @@ import { Redirect } from 'react-router'
 class SignIn extends Component {
   state = {
     username: '',
-    passowrd: '',
+    password: '',
     user_image: 'https://cdn1.iconfinder.com/data/icons/simple-icons/256/github-256-black.png',
     redirect: false,
     disabled: true,
@@ -26,9 +26,13 @@ class SignIn extends Component {
   }
 
   checkPasswordForUser = (event) => {
+    console.log(this.state.password)
    return fetch(`http://localhost:3001/api/users/${this.state.username}/signin`, {
-     method: 'GET',
-    //  headers: 
+     method: "GET",
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': this.state.password
+    },
    }) 
    .then(buffer => buffer.json())
    .then(userData=>{
@@ -46,20 +50,20 @@ class SignIn extends Component {
   }
 
 
-  checkUsername = (event) => {
-    event.preventDefault()
-    return fetch(`https://api.github.com/users/${this.state.username}`)
-      .then((resBuffer) => resBuffer.json())
-      .then((res) => {
-        if (res.username && res.username.toLowerCase() === this.state.username.toLowerCase() ) {
-          this.setState({
-            username: res.login,
-            user_image: res.avatar_url
-          })
-        }
-      })
-      .catch(console.log);
-  };
+  // checkUsername = (event) => {
+  //   event.preventDefault()
+  //   return fetch(`https://api.github.com/users/${this.state.username}`)
+  //     .then((resBuffer) => resBuffer.json())
+  //     .then((res) => {
+  //       if (res.username && res.username.toLowerCase() === this.state.username.toLowerCase() ) {
+  //         this.setState({
+  //           username: res.login,
+  //           user_image: res.avatar_url
+  //         })
+  //       }
+  //     })
+  //     .catch(console.log);
+  // };
 
   submitForm = (event) => {
     event.preventDefault()
@@ -86,7 +90,7 @@ class SignIn extends Component {
                 </div>
                 <small className="form-text text-muted">your password</small>
               </div>
-              <button type="submit" className="btn btn-primary" disabled>sign in</button>
+              <button type="submit" className="btn btn-primary" disabled={this.state.disabled}>sign in</button>
             </form>
             {this.state.redirect && <Redirect to={`/users/${this.state.username}`} />}
           </div>
