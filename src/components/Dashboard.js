@@ -3,7 +3,6 @@ import '../css/OverallStyle.css';
 import '../css/Kata.css';
 import CircularProgressbar from 'react-circular-progressbar';
 import moment from 'moment';
-const _ = require('lodash');
 
 class Dashboard extends React.Component {
 
@@ -47,7 +46,6 @@ class Dashboard extends React.Component {
                 })
                 for (let i = 0; i < scores.length; i++) {
                     for (let j = scores[i].length - 1; j < scores[i].length; j++) {
-                        // console.log(scores[i][j])
                         if (!/score: 100/.test(scores[i][j])) {
                             incompleteKatas.push(kataNames[i])
                         }
@@ -79,7 +77,7 @@ class Dashboard extends React.Component {
                             return percentage === 100 ? 'complete' : 'incomplete';
                         }}
                     />
-                    <p>Tests Passed</p>
+                    <p>Katas Complete</p>
                 </div>
 
 
