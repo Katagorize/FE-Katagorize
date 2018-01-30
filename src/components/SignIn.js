@@ -26,7 +26,6 @@ class SignIn extends Component {
   }
 
   checkPasswordForUser = (event) => {
-    console.log(this.state.password)
    return fetch(`http://localhost:3001/api/users/${this.state.username}/signin`, {
      method: "GET",
     headers: {
@@ -36,6 +35,7 @@ class SignIn extends Component {
    }) 
    .then(buffer => buffer.json())
    .then(userData=>{
+     console.log(userData)
      if(userData && this.state.username === userData.username) {
        this.setState({
          validUser: true,
@@ -43,27 +43,11 @@ class SignIn extends Component {
        })
      } else {
        this.setState({
-         loginMessage: 'incorrect username or password'
+         loginMessage: 'incorrect username or password',
        })
      }
    })
   }
-
-
-  // checkUsername = (event) => {
-  //   event.preventDefault()
-  //   return fetch(`https://api.github.com/users/${this.state.username}`)
-  //     .then((resBuffer) => resBuffer.json())
-  //     .then((res) => {
-  //       if (res.username && res.username.toLowerCase() === this.state.username.toLowerCase() ) {
-  //         this.setState({
-  //           username: res.login,
-  //           user_image: res.avatar_url
-  //         })
-  //       }
-  //     })
-  //     .catch(console.log);
-  // };
 
   submitForm = (event) => {
     event.preventDefault()

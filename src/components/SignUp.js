@@ -17,7 +17,6 @@ class SignUp extends Component {
     this.fetchValidStudents()
   }
 
-
   checkPassword = (event) => {
     let disabled = true
     if ((/(?=.*[0-9])[a-zA-Z0-9]{8,}\w+/).test(event.target.value)) {
@@ -85,8 +84,6 @@ class SignUp extends Component {
         exists: ''})
     })
   }
-
-
 
   render() {
     this.state.exists = this.state.exists ? 'user already exists' : '';
