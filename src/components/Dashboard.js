@@ -9,25 +9,40 @@ class Dashboard extends React.Component {
 
     state = {
         availableKatas: [],
-        usersKata: []
+        completedKatas: 0
     }
 
     componentDidMount() {
-        this.getAvailableKatas()
+        this.getAvailableKatas();
+        this.getUserKatas();
     }
 
     getAvailableKatas = () => {
-
         return fetch('http://localhost:3001/api/katas')
-        .then((res) => res.json())
-        .then((katas) => {
-            let availableKatas = katas.filter((kata) => {
-                return moment(kata.release_date).isBefore(moment().format())
+            .then((res) => res.json())
+            .then((katas) => {
+                let availableKatas = katas.filter((kata) => {
+                    return moment(kata.release_date).isBefore(moment().format())
+                })
+                this.setState({
+                    availableKatas
+                })
             })
-            this.setState({
-                availableKatas
-            })
+    }
+
+    getUserKatas = () => {
+     return fetch(`http://localhost:3001/api/users`)
+     .then((res) => res.json())
+     .then((userKatas) => {
+        const scores = Object.values(userKatas[this.props.username])
+        const completedKatas = scores.reduce((acc, test) => {
+            if (/score: 100/.test(test)) acc++
+            return acc
+        },0)
+        this.setState({
+            completedKatas
         })
+     })
     }
 
     render() {
@@ -37,13 +52,13 @@ class Dashboard extends React.Component {
 
 
                 <div className='circleDiv'>
-                    <CircularProgressbar percentage={100 / this.state.tests * this.state.passes}
+                    <CircularProgressbar percentage={100 / this.state.availableKatas.length * this.state.completedKatas}
                         strokeWidth={5}
                         Clockwise
                         initialAnimation={true}
                         strokeWidth={5}
                         textForPercentage={(percentage) => {
-                            return percentage === 100 ? `Woo!!` : `${this.state.passes} / ${this.state.tests}`;
+                            return percentage === 100 ? `Woo!!` : `${this.state.completedKatas} / ${this.state.availableKatas.length}`;
                         }}
                         classForPercentage={(percentage) => {
                             return percentage === 100 ? 'complete' : 'incomplete';

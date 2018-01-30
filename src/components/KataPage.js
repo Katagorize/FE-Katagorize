@@ -66,7 +66,7 @@ componentDidMount() {
                        )
                         })}
                     </div>
-                    <Dashboard />
+                    <Dashboard username={this.props.match.params.username}/>
                    
                 </div>
             </div>
