@@ -35,7 +35,7 @@ class SignIn extends Component {
    }) 
    .then(buffer => buffer.json())
    .then(userData=>{
-     console.log(userData)
+     
      if(userData && this.state.username === userData.username) {
        this.setState({
          validUser: true,
