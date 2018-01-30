@@ -60,7 +60,9 @@ class SignIn extends Component {
         <div className="loginForm">
           <div >
             <form className='signinForm' onSubmit={this.submitForm}>
+
               <img alt='avatar url' src={this.state.user_image} style={{ height: '75px', backgroundColor: 'rgba(255, 255, 255, 0.233)', borderRadius: '50%' }} />
+
               <div className="form-group">
                 <label>Github username</label>
                 <input type="username" className="form-control" placeholder="github username" value={this.state.username} onChange={this.changeUsernameValue} />
@@ -70,11 +72,14 @@ class SignIn extends Component {
                 <label>Password</label>
                 <div style={{ display: 'flex', flexDirection: 'row' }}>
                   <input type="password" className="form-control" id="exampleInputPassword1" placeholder="password" password={this.state.password} onChange={this.savePassword} onBlur={this.checkPasswordForUser} />
+
                   <p>{this.state.passwordCheck}</p>
                 </div>
                 <small className="form-text text-muted">your password</small>
               </div>
+
               <button type="submit" className="btn btn-primary" disabled={this.state.disabled}>sign in</button>
+
             </form>
             {this.state.redirect && <Redirect to={`/users/${this.state.username}`} />}
           </div>

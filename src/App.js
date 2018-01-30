@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
+import './css/App.css';
+import './css/Kata.css';
+
+
+// import Particles from 'react-particles-js'
+// import pParams from './particles/particles'
 import HomePage from './components/HomePage';
-import UserPage from './components/UserPage';
+import KataPage from './components/KataPage';
+import KataData from './components/KataData';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
-import { BrowserRouter, Route, Switch} from "react-router-dom";
+import { BrowserRouter, Route, Switch, NavLink } from "react-router-dom";
 
 
 class App extends Component {
-  state= {
-    
-  }
+
 
   render() {
+
     return (
-      
       <div>
       <BrowserRouter>
         <div className="App">
@@ -22,8 +27,8 @@ class App extends Component {
           <Route exact path="/" component={HomePage} />
           <Route exact path='/signin' component={SignIn}/>
           <Route exact path='/signup' component={SignUp}/>
-          <Route path="/users/:username" component={UserPage} />
-
+          <Route path="/users/:username" component={KataPage} />
+          <Route path="/api/users/:user_name/katas/:kata_name/test" component={KataData} />
           </Switch>
         </div>
       </BrowserRouter>
