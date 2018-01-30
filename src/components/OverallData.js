@@ -1,21 +1,32 @@
 import React from 'react';
-import '../css/style.css';
-import '../css/KataData.css';
+import '../css/OverallStyle.css';
+import '../css/Kata.css';
 import CircularProgressbar from 'react-circular-progressbar';
+const _ = require('lodash');
 
-class KataData extends React.Component {
+class OverallData extends React.Component {
 
     state = {
-        tests: 0,
-        passes: 0,
-        fails: 0
+        latestTest: '',
+        latestTestScore: 0,
+        numberOfKatas: 0
+    }
+
+    getUsersData = () => {
+        return fetch('http://localhost:3001/api/users/')
+        .then((data) => {
+            return data.json()
+        })
+        .then((data) => {
+
+        })
     }
 
     render() {
 
         return (
             <div className="results">
-                <h4>Kata data</h4>
+                <h4>Kata overview</h4>
 
                 <div className='circleDiv'>
                     <CircularProgressbar percentage={10}
@@ -28,7 +39,7 @@ class KataData extends React.Component {
                             return percentage === 100 ? `Woo!!` : `${this.state.fails} / ${this.state.tests}`;
                         }}
                     />
-                    <p>Tests failed</p>
+                    <p>Las</p>
                 </div>
 
                 <div className='circleDiv'>
@@ -67,4 +78,4 @@ class KataData extends React.Component {
 
 }
 
-export default KataData;
+export default OverallData;

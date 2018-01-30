@@ -6,6 +6,7 @@ import '../css/Kata.css'
 import CircularProgressbar from 'react-circular-progressbar';
 import data from '../data/data'
 import KataData from './KataData'
+import OverallData from './OverallData'
 import { BrowserRouter, Route, Switch, NavLink, Link } from "react-router-dom";
 
 
@@ -48,12 +49,14 @@ componentDidMount() {
                     </div> */}
 
                     <div className='title'>
-                        <h2>KataLyst testing area</h2>
+                        <h2>{`${this.props.match.params.username}'s Kata testing area`}</h2>
 
                     </div>
 
 
                     <div className='KataList'>
+
+                    <h3>Completed Katas</h3>
                     {this.state.katas.map((kata) => {
                         
                        return (
@@ -63,7 +66,7 @@ componentDidMount() {
                        )
                         })}
                     </div>
-                    <KataData />
+                    <OverallData />
                    
                 </div>
             </div>
