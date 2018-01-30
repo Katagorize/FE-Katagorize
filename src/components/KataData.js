@@ -59,7 +59,7 @@ class KataData extends React.Component {
                 </div>
 
                 <div className='dataBox'>
-                    <p>Blah mother fucking blah</p>
+                    <p>...</p>
                 </div>
             </div>
         )

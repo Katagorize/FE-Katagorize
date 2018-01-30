@@ -15,7 +15,7 @@ class KataPage extends React.Component {
         katas: []
     }
 
-    pleaseWork () {
+    fetchKataList () {
         return fetch(`http://localhost:3001/api/users/${this.props.match.params.username}`)
         .then((katas) => {
            return katas.json()
@@ -28,7 +28,7 @@ class KataPage extends React.Component {
     }
 
 componentDidMount() {
-     this.pleaseWork();
+     this.fetchKataList();
 }
 
     render() {
