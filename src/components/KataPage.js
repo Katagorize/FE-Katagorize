@@ -13,7 +13,9 @@ import { BrowserRouter, Route, Switch, NavLink, Link } from "react-router-dom";
 class KataPage extends React.Component {
 
     state = {
-        katas: []
+        katas: [],
+        userName: this.props.match.params.username,
+        kataName: this.props.match.kata_name
     }
 
     fetchKataList () {
@@ -29,12 +31,15 @@ class KataPage extends React.Component {
         })
     }
 
+
 componentDidMount() {
      this.fetchKataList();
 }
 
     render() {
-        
+       
+        console.log(this.props,'*************')
+
         return (
             <div>
 
@@ -61,7 +66,7 @@ componentDidMount() {
                         
                        return (
 
-                        <li><Link to='/api/users/:user_name/katas/:kata_name/test'>{kata.name}</Link></li>
+                        <li><Link to={`/users/${this.state.userName}/${kata.name}`}>{kata.name}</Link></li>
                         
                        )
                         })}

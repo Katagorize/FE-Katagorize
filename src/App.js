@@ -28,7 +28,7 @@ class App extends Component {
           <Route exact path='/signin' component={SignIn}/>
           <Route exact path='/signup' component={SignUp}/>
           <Route path="/users/:username" component={KataPage} />
-          <Route path="/api/users/:user_name/katas/:kata_name/test" component={KataData} />
+          <Route path="/users/:username/:kata_name" component={KataPage} />
           </Switch>
         </div>
       </BrowserRouter>
