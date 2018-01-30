@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import '../css/App.css';
-import '../css/Kata.css';
+import './css/App.css';
+import './css/Kata.css';
 
 // import Particles from 'react-particles-js'
 // import pParams from './particles/particles'
-import HomePage from './HomePage';
-import KataPage from './KataPage';
-import KataData from './KataData';
-import SignIn from './SignIn';
-import SignUp from './SignUp';
+import HomePage from './components/HomePage';
+import KataPage from './components/KataPage';
+import KataData from './components/KataData';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
 import { BrowserRouter, Route, Switch, NavLink } from "react-router-dom";
 
 

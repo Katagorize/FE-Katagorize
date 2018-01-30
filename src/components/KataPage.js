@@ -6,6 +6,8 @@ import '../css/Kata.css'
 import CircularProgressbar from 'react-circular-progressbar';
 import data from '../data/data'
 import KataData from './KataData'
+import { BrowserRouter, Route, Switch, NavLink, Link } from "react-router-dom";
+
 
 class KataPage extends React.Component {
 
@@ -53,7 +55,9 @@ componentDidMount() {
                     <div className='KataList'>
                     {this.state.katas.map((kata) => {
                        return (
-                            <li>{kata.kata_name}</li>
+
+                        <li><Link to='/api/users/:user_name/katas/:kata_name/test'>{kata.kata_name}</Link></li>
+                        
                        )
                         })}
                     </div>
