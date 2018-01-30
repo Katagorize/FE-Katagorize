@@ -14,9 +14,18 @@ class KataData extends React.Component {
         failureMessage: []
     }
     
-    getAllData = () => {
+    getAllData = (newProps) => {
+
+        let username = this.props.match.params.username;
+        let kataname = this.props.match.params.kata_name;
+
+        if (newProps) {
+            
+            username = newProps.match.params.username
+            kataname = newProps.match.params.kata_name
+        }
         
-        return fetch(`http://localhost:3001/api/users/${this.props.match.params.username}/katas/${this.props.match.params.kata_name}/test`)
+        return fetch(`http://localhost:3001/api/users/${username}/katas/${kataname}/test`)
         .then((data) => {
             return data.json()
         })
@@ -36,7 +45,7 @@ class KataData extends React.Component {
         this.getAllData()
     } 
     
-    componentWillReceiveProps() {
+    componentWillReceiveProps(newProps) {
         this.getAllData()
     }
     
@@ -87,8 +96,20 @@ class KataData extends React.Component {
                     <p>Percentage complete</p>
                 </div>
 
-                <div className='dataBox'>
-                    <p>...</p> 
+                <div className='failBox'>
+                    {this.state.failureMessage.map((fails) => {
+                        return (
+                        <span><i className="fa fa-times-circle fa-lg" aria-hidden="true"></i><p>{fails.title}</p></span>
+                        )
+                    })}
+                </div>
+
+                <div className='passBox'>
+                    {this.state.passMessages.map((passes) => {
+                        return (
+                        <span><i className="fa fa-check fa-lg" aria-hidden="true"></i><p>{passes.title}</p></span>
+                        )
+                    })}
                 </div>
             </div>
         )

@@ -135,3 +135,26 @@
 .topnav .icon {
     display: none;
 }
+
+.failBox{
+    
+}
+
+.failBox i{
+    color: tomato;
+    font-size: 15px;
+    float:left;
+    padding-right: 15px;
+}
+
+.passBox{
+    
+}
+
+.passBox i{
+    color: olivedrab;
+    font-size: 15px;
+    float:left;
+    padding-right: 15px;
+
+}
