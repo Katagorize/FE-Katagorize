@@ -15,7 +15,8 @@ class KataPage extends React.Component {
     state = {
         katas: [],
         userName: this.props.match.params.username,
-        kataName: this.props.match.kata_name
+        kataName: this.props.match.kata_name,
+        hasClickedOnKata: false
     }
 
     fetchKataList () {
@@ -38,8 +39,6 @@ componentDidMount() {
 
     render() {
        
-        console.log(this.props,'*************')
-
         return (
             <div>
 
@@ -66,12 +65,19 @@ componentDidMount() {
                         
                        return (
 
-                        <li><Link to={`/users/${this.state.userName}/${kata.name}`}>{kata.name}</Link></li>
+                        <li><Link to={`/users/${this.state.userName}/${kata.name}`} onClick={() => {this.setState({hasClickedOnKata: true})}}>{kata.name}</Link></li>
                         
                        )
                         })}
                     </div>
-                    <OverallData />
+               
+                    {!this.state.hasClickedOnKata &&  <OverallData />}
+                    {this.state.hasClickedOnKata &&  <KataData />}
+
+                   
+
+                    
+
                    
                 </div>
             </div>
