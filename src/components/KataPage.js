@@ -6,7 +6,7 @@ import '../css/Kata.css'
 import CircularProgressbar from 'react-circular-progressbar';
 import data from '../data/data'
 import KataData from './KataData'
-import OverallData from './OverallData'
+import Dashboard from './Dashboard'
 import { BrowserRouter, Route, Switch, NavLink, Link } from "react-router-dom";
 
 
@@ -66,7 +66,7 @@ componentDidMount() {
                        )
                         })}
                     </div>
-                    <OverallData />
+                    <Dashboard />
                    
                 </div>
             </div>
