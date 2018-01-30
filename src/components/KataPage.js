@@ -38,7 +38,6 @@ componentDidMount() {
 }
 
     render() {
-       
         return (
             <div>
 
@@ -72,7 +71,7 @@ componentDidMount() {
                     </div>
                
                     {!this.state.hasClickedOnKata &&  <OverallData />}
-                    {this.state.hasClickedOnKata &&  <KataData />}
+                    {this.state.hasClickedOnKata &&  <KataData  />}
 
                    
 

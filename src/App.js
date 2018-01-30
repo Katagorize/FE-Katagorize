@@ -24,13 +24,13 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
         {/* <Header/> */}
-        <Switch>
+        {/* <Switch> */}
           <Route exact path="/" component={HomePage} />
           <Route exact path='/signin' component={SignIn}/>
           <Route exact path='/signup' component={SignUp}/>
           <Route path="/users/:username" component={KataPage} />
-          <Route path="/users/:username/:kata_name" component={KataData} />
-          </Switch>
+          <Route path="/users/:username/:kata_name" component={KataData}/>
+          {/* </Switch> */}
         </div>
       </BrowserRouter>
       </div>

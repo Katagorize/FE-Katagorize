@@ -3,16 +3,39 @@ import '../css/style.css';
 import '../css/KataData.css';
 import CircularProgressbar from 'react-circular-progressbar';
 
-class KataData extends React.Component {
 
+class KataData extends React.Component {
+    
     state = {
         tests: 0,
         passes: 0,
         fails: 0
     }
-
+    
+    getAllData = () => {
+        fetch(`http://localhost:3001/api/users/${this.props.match.params.username}/katas/${this.props.match.params.kata_name}/test`)
+        .then((data) => {
+            return data.json()
+        })
+        .then((data) => {
+           return this.setState({
+                tests: data.stats.tests,
+                passes: data.stats.passes,
+                fails: data.stats.failures,
+                passMessages: data.passes,
+                failureMessage: data.failures
+            })
+        })
+    }
+    
+    
+    componentWillMount() {
+        this.getAllData()
+    }    
+    
     render() {
-
+    
+{console.log(this.state)}
         return (
             <div className="results">
                 <h4>Kata data</h4>
