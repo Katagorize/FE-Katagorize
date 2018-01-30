@@ -38,6 +38,7 @@ componentDidMount() {
 }
 
     render() {
+        console.log
         return (
             <div>
 
@@ -71,9 +72,12 @@ componentDidMount() {
                     </div>
                
                     {!this.state.hasClickedOnKata &&  <OverallData />}
-                    {this.state.hasClickedOnKata &&  <KataData  />}
+                    {this.state.hasClickedOnKata &&   <Route path="/users/:username/:kata_name" component={KataData}/>
+}
 
-                   
+
+                    
+
 
                     
 

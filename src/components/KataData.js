@@ -9,11 +9,14 @@ class KataData extends React.Component {
     state = {
         tests: 0,
         passes: 0,
-        fails: 0
+        fails: 0,
+        passMessages: [],
+        failureMessage: []
     }
     
     getAllData = () => {
-        fetch(`http://localhost:3001/api/users/${this.props.match.params.username}/katas/${this.props.match.params.kata_name}/test`)
+        
+        return fetch(`http://localhost:3001/api/users/${this.props.match.params.username}/katas/${this.props.match.params.kata_name}/test`)
         .then((data) => {
             return data.json()
         })
@@ -29,13 +32,16 @@ class KataData extends React.Component {
     }
     
     
-    componentWillMount() {
+    componentDidMount() {
         this.getAllData()
-    }    
+    } 
+    
+    componentWillReceiveProps() {
+        this.getAllData()
+    }
     
     render() {
-    
-{console.log(this.state)}
+      console.log(this.state.fails, this.state.passes)
         return (
             <div className="results">
                 <h4>Kata data</h4>
