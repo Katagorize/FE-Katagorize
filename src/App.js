@@ -11,6 +11,7 @@ import KataData from './components/KataData';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import { BrowserRouter, Route, Switch, NavLink } from "react-router-dom";
+import OverallData from './components/OverallData';
 
 
 class App extends Component {
@@ -23,13 +24,12 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
         {/* <Header/> */}
-        <Switch>
+        {/* <Switch> */}
           <Route exact path="/" component={HomePage} />
           <Route exact path='/signin' component={SignIn}/>
           <Route exact path='/signup' component={SignUp}/>
           <Route path="/users/:username" component={KataPage} />
-          <Route path="/api/users/:user_name/katas/:kata_name/test" component={KataData} />
-          </Switch>
+          {/* </Switch> */}
         </div>
       </BrowserRouter>
       </div>
