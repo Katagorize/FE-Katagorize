@@ -6,7 +6,7 @@ import HomePage from './components/HomePage';
 import KataPage from './components/KataPage';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route } from "react-router-dom";
 
 
 class App extends Component {
