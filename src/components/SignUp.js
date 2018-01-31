@@ -86,7 +86,13 @@ class SignUp extends Component {
   }
 
   render() {
-    this.state.exists = this.state.exists ? 'user already exists' : '';
+
+    if (this.state.exists) {
+      this.setState({exists: 'user already exists'})
+    } else {
+      this.setState({exists: ''})
+    }
+    
     return (
       <div className="loginForm">
         <div >

@@ -56,12 +56,12 @@ class KataData extends React.Component {
                 <h4>Kata data</h4>
 
                 <div className='circleDiv'>
-                    <CircularProgressbar percentage={10}
+                    <CircularProgressbar  
+                        percentage={10}
                         className="CircularProgressbar-inverted"
                         strokeWidth={5}
                         Clockwise
                         initialAnimation={true}
-                        strokeWidth={4}
                         textForPercentage={(percentage) => {
                             return percentage === 100 ? `Woo!!` : `${this.state.fails} / ${this.state.tests}`;
                         }}
@@ -70,11 +70,11 @@ class KataData extends React.Component {
                 </div>
 
                 <div className='circleDiv'>
-                    <CircularProgressbar percentage={100 / this.state.tests * this.state.passes}
+                    <CircularProgressbar  
+                        percentage={100 / this.state.tests * this.state.passes}
                         strokeWidth={5}
                         Clockwise
                         initialAnimation={true}
-                        strokeWidth={5}
                         textForPercentage={(percentage) => {
                             return percentage === 100 ? `Woo!!` : `${this.state.passes} / ${this.state.tests}`;
                         }}
@@ -87,11 +87,11 @@ class KataData extends React.Component {
 
 
                 <div className='circleDiv'>
-                    <CircularProgressbar percentage={100 / this.state.tests * this.state.passes}
+                    <CircularProgressbar
+                        percentage={100 / this.state.tests * this.state.passes}
                         strokeWidth={5}
                         Clockwise
                         initialAnimation={true}
-                        strokeWidth={5}
                     />
                     <p>Percentage complete</p>
                 </div>

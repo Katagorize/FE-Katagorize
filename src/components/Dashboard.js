@@ -65,11 +65,11 @@ class Dashboard extends React.Component {
 
 
                 <div className='circleDiv'>
-                    <CircularProgressbar percentage={100 / this.state.availableKatas.length * this.state.completedKatas}
+                    <CircularProgressbar 
+                        percentage={100 / this.state.availableKatas.length * this.state.completedKatas}
                         strokeWidth={5}
                         Clockwise
                         initialAnimation={true}
-                        strokeWidth={5}
                         textForPercentage={(percentage) => {
                             return percentage === 100 ? `Woo!!` : `${this.state.completedKatas} / ${this.state.availableKatas.length}`;
                         }}

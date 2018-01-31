@@ -1,8 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router'
-import { Route, Link } from 'react-router-dom'
-import SignIn from './SignIn'
-import SignUp from './SignUp'
+import { Link } from 'react-router-dom';
 
 class HomePage extends React.Component {
     render() {
