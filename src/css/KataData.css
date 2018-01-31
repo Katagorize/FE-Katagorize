@@ -37,9 +37,6 @@
     list-style: none;
   }
 
-
-  
-
   .results {
     text-align: center;
     background-color: rgba(0, 0, 0, 0.253);
@@ -71,7 +68,6 @@
     background-color: red;
    }
 
-
   .results  p{
     text-align: center;
     background-color: rgba(0, 0, 0, 0.253);
@@ -99,7 +95,6 @@
     width: 300%;
    }
 
- 
   .testData {
 
   }
@@ -139,8 +134,8 @@
 }
 
 .passBox{
-    grid-column-start: 6;
-    grid-column-end: 12;
+    grid-column-start: 7;
+    grid-column-end: 13;
     grid-row-start: 7;
     grid-row-end: 14; 
 }
@@ -150,5 +145,4 @@
     font-size: 15px;
     float:left;
     padding-right: 15px;
-
 }
