@@ -1,13 +1,9 @@
 import React from 'react';
-// import Particles from 'react-particles-js';
-// import pParams from '../particles/particles';
-import '../css/style.css'
-import '../css/Kata.css'
-import CircularProgressbar from 'react-circular-progressbar';
-import data from '../data/data'
-import KataData from './KataData'
-import Dashboard from './Dashboard'
-import { BrowserRouter, Route, Switch, NavLink, Link } from "react-router-dom";
+import '../css/style.css';
+import '../css/Kata.css';
+import KataData from './KataData';
+import Dashboard from './Dashboard';
+import { Route, Link } from "react-router-dom";
 
 
 class KataPage extends React.Component {
@@ -38,7 +34,7 @@ componentDidMount() {
 }
 
     render() {
-        console.log
+        
         return (
             <div>
 
