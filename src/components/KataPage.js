@@ -6,7 +6,7 @@ import '../css/Kata.css'
 import CircularProgressbar from 'react-circular-progressbar';
 import data from '../data/data'
 import KataData from './KataData'
-import OverallData from './OverallData'
+import Dashboard from './Dashboard'
 import { BrowserRouter, Route, Switch, NavLink, Link } from "react-router-dom";
 
 
@@ -71,15 +71,9 @@ componentDidMount() {
                         })}
                     </div>
                
-                    {!this.state.hasClickedOnKata &&  <OverallData />}
+                    {!this.state.hasClickedOnKata &&  <Dashboard username={this.props.match.params.username}/>}
                     {this.state.hasClickedOnKata &&   <Route path="/users/:username/:kata_name" component={KataData}/>
 }
-
-
-                    
-
-
-                    
 
                    
                 </div>
