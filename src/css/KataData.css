@@ -132,6 +132,11 @@
     padding-right: 15px;
 }
 
+.failBox h6 {
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+
 .passBox{
     grid-column-start: 7;
     grid-column-end: 13;
@@ -144,4 +149,9 @@
     font-size: 15px;
     float:left;
     padding-right: 15px;
+}
+
+.passBox h6 {
+  font-size: 15px;
+  padding-bottom: 10px;
 }

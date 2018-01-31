@@ -52,6 +52,9 @@ class KataData extends React.Component {
 
     componentWillReceiveProps(newProps) {
         this.getUserScores(newProps)
+        .then(() => {
+            this.getAllData();
+        })
     
     }
 
@@ -115,18 +118,20 @@ class KataData extends React.Component {
 
                 <div className='graph'>
 
-                    <p>text</p>
+                    <h4>Scores for each commit.</h4>
                     <Trend data={this.state.scores}
                         autoDraw
-                        autoDrawDuration={3000}
-                        autoDrawEasing="ease-in" 
+                        autoDrawDuration={4000}
+                        autoDrawEasing="ease-out" 
                         gradient={['#C31433', '#395E66', '#083D77', '#DDE2C6']}
                         width={350} 
                         height={250}
                         strokeWidth={4}/>
+                    <p>This graph shows the highs and lows of your scores, you should be aiming high. The straighter the line, the mosre consistent you are with your code. </p>    
                 </div>
 
                 <div className='failBox'>
+                <h6>Here are the tests that you have failed.</h6>
                     {this.state.failureMessage.map((fails) => {
                         return (
                             <span><i className="fa fa-times-circle fa-lg" aria-hidden="true"></i><p>{fails.title}</p></span>
@@ -135,6 +140,8 @@ class KataData extends React.Component {
                 </div>
 
                 <div className='passBox'>
+                <h6>Here are the tests that you have passed.</h6>
+
                     {this.state.passMessages.map((passes) => {
                         return (
                             <span><i className="fa fa-check fa-lg" aria-hidden="true"></i><p>{passes.title}</p></span>
