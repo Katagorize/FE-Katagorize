@@ -1,10 +1,10 @@
-.App {
-  /* text-align: center;
+/* .wrapper {
+  text-align: center;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-gap: 10px;
-  grid-auto-rows: minmax(50px, auto); */
-}
+  grid-auto-rows: minmax(50px, auto);
+} */
 
 
 /* .siteBackground {
@@ -15,9 +15,9 @@
   height:100%;
   background: url('../img/books2.jpg') no-repeat center;
   background-size: cover; 
-}
+} */
 
-.homeMain {
+/* .home {
   text-shadow: 3px 4px 3px rgba(0, 0, 0, 0.455),
   0px 8px 13px rgba(0,0,0,0.1),
   0px 18px 23px rgba(0,0,0,0.1);
@@ -30,9 +30,9 @@
   font-size: 35px;
   color: white;
   font-family: 'Montserrat', sans-serif;
-}
+} */
 
-.title{
+/*.title{
   text-align: center;
   grid-column-start: 4;
   grid-column-end: 9;
@@ -42,7 +42,7 @@
   
 } */
 
-/* .WhatWeDo{
+ /* .WhatWeDo{
   grid-column-start: 2;
   grid-column-end: 5;
   grid-row-start: 5;
@@ -70,7 +70,7 @@
   color:white;
 } */
 
-.loginForm {
+/* .loginForm {
   border-radius: 5px;
   grid-column-start: 3;
   grid-column-end: 10;
@@ -79,6 +79,6 @@
   font-size: 18px;
   background-color: rgba(255, 255, 255, 0.103);
   padding: 40px;
-}
+} */ 
 
 

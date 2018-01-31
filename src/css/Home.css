@@ -1,0 +1,103 @@
+.home {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-auto-rows: minmax(50px, auto);
+        font-size: 35px;
+        height: 100%;
+        background-color: #DDE2C6;
+        color: white;
+}
+
+.banner {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: #395E66;
+    font-family: 'Fjalla One';
+    padding: 5px;
+}
+
+.info {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    grid-row-start: 2;
+    grid-row-end: 3;    
+    padding: 10px;
+    font-family: 'Montserrat';
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(50px, auto);
+    height: 100%;
+    grid-gap: 8px;
+    background-color: #DDE2C6;
+    color: white;
+}
+
+.info > * {
+    color: #090C02;
+    padding: 20px;
+    font-size: 0.8em !important;
+    text-align: center;
+}
+
+
+.info-text {
+    color: #090C02;
+    text-align: center;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-column-end: -1;
+}
+
+.first {
+    font-size: 1.25rem !important;
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.second {
+    font-size: 1.25rem !important;
+    grid-row-start: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+.third {
+    font-size: 1.25rem !important;
+    grid-row-start: 2;
+    grid-column-start: 3;
+    grid-column-end: 4; 
+}
+
+.fourth {
+    font-size: 1.25rem !important;
+    grid-row-start: 2;
+    grid-column-start: 4;
+    grid-column-end: -1; 
+}
+
+.icon {
+    text-align: center;
+    font-size: 3.2rem;
+}
+
+.signin {
+    color: #C31433;
+    grid-row-start: 3;
+    grid-column-start: 2;
+    grid-column-end: 3; 
+}
+
+.signup {
+    color: #C31433;
+    grid-row-start: 3;
+    grid-column-start: 3;
+    grid-column-end: 4; 
+}
+
+a:hover {
+    text-decoration: none;
+    color: #083D77;
+}
