@@ -11,7 +11,6 @@ import KataData from './components/KataData';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
 import { BrowserRouter, Route, Switch, NavLink } from "react-router-dom";
-import OverallData from './components/OverallData';
 
 
 class App extends Component {
