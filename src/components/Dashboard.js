@@ -18,7 +18,7 @@ class Dashboard extends React.Component {
     }
 
     getAvailableKatas = () => {
-        return fetch('http://localhost:3001/api/katas')
+        return fetch('http://katalystpro-env.eu-west-2.elasticbeanstalk.com/api/katas')
             .then((res) => res.json())
             .then((katas) => {
                 let availableKatas = katas.filter((kata) => {
@@ -31,7 +31,7 @@ class Dashboard extends React.Component {
     }
 
     getUserKatas = () => {
-        return fetch(`http://localhost:3001/api/users`)
+        return fetch(`http://katalystpro-env.eu-west-2.elasticbeanstalk.com/api/users`)
             .then((res) => res.json())
             .then((userKatas) => {
                 const scores = Object.values(userKatas[this.props.username])
@@ -54,7 +54,6 @@ class Dashboard extends React.Component {
                 this.setState({
                     incompleteKatas
                 })
-                console.log(this.state)
             })
     }
 

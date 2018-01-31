@@ -62,7 +62,7 @@ class SignUp extends Component {
 
   submitForm = (event) => {
     event.preventDefault()
-    return fetch(`http://localhost:3001/api/users/${this.state.username}`, {
+    return fetch(`http://katalystpro-env.eu-west-2.elasticbeanstalk.com/api/users/${this.state.username}`, {
       method:"POST",
       headers: {
         'Content-Type': 'application/json'
@@ -76,7 +76,7 @@ class SignUp extends Component {
     .then((res) => {
       if (res === 'user already exists') {
         this.setState({
-          exists: true
+          exists: 'user already exists'
         })
       }
       else this.setState({ 
@@ -87,11 +87,11 @@ class SignUp extends Component {
 
   render() {
 
-    if (this.state.exists) {
-      this.setState({exists: 'user already exists'})
-    } else {
-      this.setState({exists: ''})
-    }
+    // if (this.state.exists) {
+    //   this.setState({exists: 'user already exists'})
+    // } else {
+    //   this.setState({exists: ''})
+    // }
     
     return (
       <div className="loginForm">
