@@ -57,14 +57,14 @@
     grid-column-end: 8;
     grid-row-start: 1;
     grid-row-end: 1;
-    font-size: 35px
+    
   }
 
   .graph {
-    grid-column-start: 4;
-    grid-column-end: 13;
+    grid-column-start: 6;
+    grid-column-end: 12;
     grid-row-start: 2;
-    grid-row-end: 7;
+    grid-row-end: 4;
    }
 
   .results  p{
@@ -76,6 +76,7 @@
 
   .results  h4{
     text-align: center;
+    
   }
 
   .circleDivA {
@@ -83,15 +84,15 @@
     grid-column-end: 2;
     grid-row-start: 2;
     grid-row-end: 4;
-    width: 300%;
+    width: 450%;
   }
 
   .circleDivB {
     grid-column-start: 1;
     grid-column-end: 2;
-    grid-row-start: 4;
+    grid-row-start: 3;
     grid-row-end: 6;
-    width: 300%;
+    width: 450%;
    }
 
   .testData {
@@ -121,7 +122,7 @@
 .failBox{
     grid-column-start: 1;
     grid-column-end: 6;
-    grid-row-start: 7;
+    grid-row-start: 5;
     grid-row-end: 14;
 }
 
@@ -140,7 +141,7 @@
 .passBox{
     grid-column-start: 7;
     grid-column-end: 13;
-    grid-row-start: 7;
+    grid-row-start: 5;
     grid-row-end: 14; 
 }
 

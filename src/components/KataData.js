@@ -124,7 +124,7 @@ class KataData extends React.Component {
                         autoDrawDuration={4000}
                         autoDrawEasing="ease-out" 
                         gradient={['#C31433', '#395E66', '#083D77', '#DDE2C6']}
-                        width={350} 
+                        width={300} 
                         height={250}
                         strokeWidth={4}/>
                     <p>This graph shows the highs and lows of your scores, you should be aiming high. The straighter the line, the mosre consistent you are with your code. </p>    
