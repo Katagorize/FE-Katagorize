@@ -87,7 +87,7 @@ class KataData extends React.Component {
 
                 <div className='circleDiv'>
                     <CircularProgressbar
-                        percentage={100 / this.state.tests * this.state.passes}
+                        percentage={Math.ceil(100 / this.state.tests * this.state.passes)}
                         strokeWidth={5}
                         Clockwise
                         initialAnimation={true}
