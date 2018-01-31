@@ -25,7 +25,7 @@ class KataData extends React.Component {
             kataname = newProps.match.params.kata_name
         }
         
-        return fetch(`http://localhost:3001/api/users/${username}/katas/${kataname}/test`)
+        return fetch(`http://katalystpro-env.eu-west-2.elasticbeanstalk.com/api/users/${username}/katas/${kataname}/test`)
         .then((data) => {
             return data.json()
         })
@@ -46,11 +46,10 @@ class KataData extends React.Component {
     } 
     
     componentWillReceiveProps(newProps) {
-        this.getAllData()
+        this.getAllData(newProps)
     }
     
     render() {
-      console.log(this.state.fails, this.state.passes)
         return (
             <div className="results">
                 <h4>Kata data</h4>

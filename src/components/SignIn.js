@@ -26,7 +26,7 @@ class SignIn extends Component {
   }
 
   checkPasswordForUser = (event) => {
-   return fetch(`http://localhost:3001/api/users/${this.state.username}/signin`, {
+   return fetch(`http://katalystpro-env.eu-west-2.elasticbeanstalk.com/api/users/${this.state.username}/signin`, {
      method: "GET",
     headers: {
       'Content-Type': 'application/json',
