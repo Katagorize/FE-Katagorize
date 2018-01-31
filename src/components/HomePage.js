@@ -14,7 +14,7 @@ class HomePage extends React.Component {
                     <div className="icon">
                     <i class="fas fa-code-branch"></i>
                     </div>
-                    <p>Fork the morning katas repos. New katas will be released every morning!</p>
+                    <p>Fork the morning katas repo. New katas will be released every morning!</p>
                     </div>
                     <div className="second">
                     <div className="icon">
