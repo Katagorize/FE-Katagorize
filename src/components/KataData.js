@@ -12,7 +12,8 @@ class KataData extends React.Component {
         passes: 0,
         fails: 0,
         passMessages: [],
-        failureMessage: []
+        failureMessage: [],
+        scores: [0, 0]
     }
 
     getAllData = (newProps) => {
@@ -41,16 +42,44 @@ class KataData extends React.Component {
             })
     }
 
-
-    componentDidMount() {
-        this.getAllData()
+   componentDidMount() {
+        this.getUserScores()
+        .then(()=> {
+            this.getAllData()
+        })
     }
+ 
 
     componentWillReceiveProps(newProps) {
-        this.getAllData(newProps)
+        this.getUserScores(newProps)
+    
+    }
+
+    getUserScores = (props) => {
+        let username = this.props.match.params.username;
+        let kataname = this.props.match.params.kata_name;
+
+        if (props) {
+
+            username = props.match.params.username
+            kataname = props.match.params.kata_name
+        }
+  
+        return fetch(`http://katalystpro-env.eu-west-2.elasticbeanstalk.com/api/users`)
+            .then((res) => res.json())
+            .then((userKatas) => {
+              return userKatas[username][kataname].map((score) => {
+                  return Number(score.match(/(\d+)(?!.*\d)/)[0])
+              })
+            })
+            .then((scores) => {
+                console.log(scores)
+            return this.setState({scores})
+            })
     }
 
     render() {
+        console.log(this.state.scores)
         return (
             <div className="results">
                 <div className='resultsTitle'>
@@ -87,7 +116,7 @@ class KataData extends React.Component {
                 <div className='graph'>
 
                     <p>text</p>
-                    <Trend data={[12,35,74,65,34,64,24,56]}
+                    <Trend data={this.state.scores}
                         autoDraw
                         autoDrawDuration={3000}
                         autoDrawEasing="ease-in" 
