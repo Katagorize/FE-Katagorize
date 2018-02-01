@@ -8,6 +8,7 @@
     height:100%;
     background-color: #DDE2C6;
     background-size: cover; 
+
 }
 
 .title{
@@ -28,21 +29,15 @@
   }
 
   .KataList{
-    background-color: rgba(0, 0, 0, 0.253);
     grid-column-start: 2;
     grid-column-end: 5;
     grid-row-start: 3;
     grid-row-end: 14;
+    background-color: rgba(57, 94, 102, 0.835);
+    border-radius: 5px
   }
 
-  .KataList h4 {
-      text-align: center;
-  }
 
-  .KataList li {
-    font-size: 25px;
-    list-style: none;
-  }
 
   .results {
     text-align: center;
@@ -70,16 +65,12 @@
     
   }
 
-  .testTitle {
-    font-size: 25px;
-    padding: 10px;
-  }
-
   .graph {
     grid-column-start: 6;
     grid-column-end: 12;
     grid-row-start: 2;
     grid-row-end: 4;
+
    }
 
   .results  p{

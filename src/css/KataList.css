@@ -1,0 +1,83 @@
+.accordion__body {
+    display: block;
+    transition: max-height .5s ease-in;
+    max-height:500px;
+    overflow: hidden;
+    transition-delay: 0s
+}
+
+.accordion__body--hidden {
+    display: none;
+    max-height:0;
+    opacity: 0;
+    transition: max-height .25s ease-in;
+    transition-delay: 0s
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.accordion__title{
+    box-shadow: inset 0px -15px 40px #00000050;
+    padding: 10px;
+    color: white;
+    height: 50px;
+    font-size: 15px;
+    cursor: pointer;
+}
+.accordion__title:hover{
+    font-size: 15.8px;
+}
+
+.accordion__title:focus{
+    outline: 0; 
+}
+
+.accordion__item {
+    /* body and title of the accordion */
+    font-family: 'Work Sans', sans-serif;
+}
+
+a {
+    color: white;
+}
+a:hover{
+    color: white;
+    text-decoration: none;
+}
+
+.kata:hover{
+    border-left: 5px solid #C31433;
+    background-color: rgba(0, 0, 0, 0.267);
+}
+
+.kata:active{
+    border-left: 5px solid #C31433;
+    background-color: rgba(0, 0, 0, 0.267);
+}
+
+.kata-name{
+    border-left: 5px solid #C31433;
+    background-color: rgba(0, 0, 0, 0.267);
+}
+
+.enabled-kata {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px 0 10px 5px;
+    font-size: 15px;
+}
+
+.disabled-kata{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: rgba(255, 255, 255, 0.472);
+    padding: 10px 0 10px 5px;
+    font-size: 14px;
+}
+

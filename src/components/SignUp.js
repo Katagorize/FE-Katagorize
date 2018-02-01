@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router'
 
 class SignUp extends Component {
   state = {
     username: '',
     password: '',
     user_image: 'https://cdn1.iconfinder.com/data/icons/simple-icons/256/github-256-black.png',
-    redirect: false,
     disabled: true,
     passwordCheck: '',
     usernameCheck: false,
@@ -23,14 +21,14 @@ class SignUp extends Component {
       if (this.state.usernameCheck) disabled = false
       this.setState({
         password: event.target.value,
-        passwordCheck: '✔️',
+        passwordCheck: 'fa fa-check fa-lg passed',
         disabled: disabled
       })
     }
     else {
       this.setState({
         password: event.target.value,
-        passwordCheck: '❌',
+        passwordCheck: 'fa fa-times-circle fa-lg failed',
         disabled: true
       })
     }
@@ -79,10 +77,10 @@ class SignUp extends Component {
             exists: 'user already exists'
           })
         }
-        else this.setState({
-          redirect: true,
-          exists: ''
-        })
+        else {
+          this.props.successfulSignUp()
+        }
+        
       })
   }
 
@@ -106,13 +104,12 @@ class SignUp extends Component {
                   <label for="inputPassword">Password</label>
                   <div style={{ display: 'flex', flexDirection: 'row' }}>
                     <input type="password" className="form-control" id="inputPassword" placeholder="password" password={this.state.password} onChange={this.checkPassword} />
-                    <p>{this.state.passwordCheck}</p>
+                    <i className={this.state.passwordCheck} aria-hidden="true"></i>
                   </div>
                   <small className="form-text text-muted">Your Password</small>
                 </div>
-                <button type="submit" className="btn btn-primary" disabled={this.state.disabled}>sign up</button>
+                <button type="submit" className="signup-button" disabled={this.state.disabled}>sign up</button>
               </form>
-              {this.state.redirect && <Redirect to={`/signin`} />}
             </div>
 
           </div>
