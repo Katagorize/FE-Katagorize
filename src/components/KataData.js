@@ -98,7 +98,7 @@ class KataData extends React.Component {
                   label: 'Test score',
                   fill: true,
                   lineTension: 0.1,
-                  backgroundColor: '#083D77',
+                //   backgroundColor: '#083D77',
                   borderColor: '#C31433',
                   borderCapStyle: 'butt',
                   borderDash: [],
