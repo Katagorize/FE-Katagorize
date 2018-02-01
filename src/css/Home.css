@@ -8,16 +8,6 @@
         color: white;
 }
 
-.banner {
-    grid-column-start: 1;
-    grid-column-end: -1;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    background-color: #395E66;
-    font-family: 'Fjalla One';
-    padding: 5px;
-}
-
 .info {
     grid-column-start: 1;
     grid-column-end: -1;

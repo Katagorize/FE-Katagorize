@@ -3,7 +3,7 @@
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 10px;
     grid-auto-rows: minmax(50px, auto);
-    font-size: 35px;
+    font-size: 45px;
     color: black;
     height:100%;
     background-color: #DDE2C6;
@@ -16,8 +16,15 @@
     grid-column-end: 9;
     grid-row-start: 2;
     grid-row-end: 3;
-    color:white;
+    color: #c31433;
+    font-weight: bold;
+    letter-spacing: 2px;
     
+     
+  }
+
+  .title h1 {
+    font-size: 45px;
   }
 
   .KataList{
@@ -56,6 +63,10 @@
     grid-column-end: 8;
     grid-row-start: 1;
     grid-row-end: 1;
+    color: #c31433;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 25px;
     
   }
 
@@ -64,12 +75,14 @@
     grid-column-end: 12;
     grid-row-start: 2;
     grid-row-end: 4;
+    
    }
 
   .results  p{
     text-align: center;
-    font-size: 10px;
+    font-size: 13px;
     display: block;
+    font-weight: bold;
   }
 
   .results  h4{
@@ -142,8 +155,14 @@
 .failBox h6 {
   font-size: 15px;
   padding-bottom: 10px;
+  font-weight: bold;
 }
 
+.failBox p {
+  font-size: 13px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
 
 .passBox{
     grid-column-start: 7;
@@ -161,4 +180,11 @@
 .passBox h6 {
   font-size: 15px;
   padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.passBox p {
+  font-size: 13px;
+  padding-bottom: 10px;
+  font-weight: bold;
 }
