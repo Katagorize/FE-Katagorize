@@ -92,25 +92,25 @@ class KataData extends React.Component {
     render() {
         
         const data = {
-            labels: this.state.scores.slice(-15),
+            labels: this.removeDuplicates(this.state.scores),
             datasets: [
                 {
-                  label: 'Scores for each test',
-                  fill: false,
+                  label: 'Test score',
+                  fill: true,
                   lineTension: 0.1,
-                  backgroundColor: 'rgba(75,192,192,0.4)',
-                  borderColor: 'rgba(75,192,192,1)',
+                  backgroundColor: '#083D77',
+                  borderColor: '#C31433',
                   borderCapStyle: 'butt',
                   borderDash: [],
                   borderDashOffset: 0.0,
-                  borderJoinStyle: 'miter',
-                  pointBorderColor: 'rgba(75,192,192,1)',
-                  pointBackgroundColor: '#fff',
-                  pointBorderWidth: 1,
+                  borderJoinStyle: 'round',
+                  pointBorderColor: '#C31433',
+                  pointBackgroundColor: '#395E66',
+                  pointBorderWidth: 3,
                   pointHoverRadius: 5,
-                  pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-                  pointHoverBorderColor: 'rgba(220,220,220,1)',
-                  pointHoverBorderWidth: 2,
+                  pointHoverBackgroundColor: '#C31433',
+                  pointHoverBorderColor: '#C31433',
+                  pointHoverBorderWidth: 3,
                   pointRadius: 1,
                   pointHitRadius: 10,
                   data: this.removeDuplicates(this.state.scores)
