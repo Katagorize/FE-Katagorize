@@ -50,7 +50,12 @@ class KataPage extends React.Component {
                 let kataScores = {}
                 for (let key in userKatas[this.props.match.params.username]) {
                     let score = userKatas[this.props.match.params.username][key].reverse()[0].split(' ').reverse()[0]
-                    kataScores[key] = +score
+                    if(+score === 0) {
+                        kataScores[key] = 2
+                    } else {
+
+                        kataScores[key] = +score
+                    }
                 }
                 this.setState({
                     progress: kataScores
@@ -90,15 +95,19 @@ class KataPage extends React.Component {
                                                                         <p>{kata.title}</p>
                                                                     </Link>
                                                                 </div>
+
+                                                                 
                                                                 <div className='progress-div'>
 
                                                                     <div className="progress-left" style={{ width: `${this.state.progress[kata.title]}%` }}>
                                                                     </div>
 
-                                                                    <div className="progress-right" style={{width: `${100 - this.state.progress[kata.title]}%`}}>
+                                                                    <div className="progress-right" style={{ width: `${100 - this.state.progress[kata.title]}%` }}>
                                                                     </div >
 
                                                                 </div>
+                                                                
+                                                                 
 
                                                             </div>
 
@@ -106,8 +115,19 @@ class KataPage extends React.Component {
                                                         )
                                                     } else {
                                                         return (
+                                                            <div>
+                                                            <div className="disabled-kata"><p key={i}>{kata.title}</p>
+                                                            </div>
 
-                                                            <div className="disabled-kata"><p key={i}>{kata.title}</p></div>
+                                                                <div className='progress-div'>
+
+                                                                    <div className="progress-left" style={{ width: "2%" , backgroundColor: 'rgba(199, 181, 16, 0.609)'}}>
+                                                                    </div>
+
+                                                                    <div className="progress-right" style={{ width:'98%' }}>
+                                                                    </div >
+                                                                </div>
+                                                            </div>
 
                                                         )
                                                     }
