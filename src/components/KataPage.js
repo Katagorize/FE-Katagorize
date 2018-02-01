@@ -13,6 +13,7 @@ import {
 } from 'react-accessible-accordion';
 import '../css/KataList.css';
 
+
 class KataPage extends React.Component {
 
 
@@ -23,6 +24,7 @@ class KataPage extends React.Component {
         kataName: this.props.match,
         hasClickedOnKata: false,
         progress: {}
+
     }
 
     fetchKataList() {
@@ -62,7 +64,7 @@ class KataPage extends React.Component {
     }
 
     render() {
-        console.log(this.state.progress)
+
         return (
             <div>
                 <div className='KataPage'>
@@ -78,6 +80,7 @@ class KataPage extends React.Component {
                                         <AccordionItemBody>
                                             <div>
                                                 {katasByWeek.map((kata, i) => {
+
                                                     if (this.state.katas.includes(kata.title)) {
 
                                                         return (
@@ -98,6 +101,7 @@ class KataPage extends React.Component {
                                                                 </div>
 
                                                             </div>
+
 
                                                         )
                                                     } else {
