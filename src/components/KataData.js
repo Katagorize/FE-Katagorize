@@ -2,8 +2,10 @@ import React from 'react';
 import '../css/style.css';
 import '../css/KataData.css';
 import CircularProgressbar from 'react-circular-progressbar';
-// import Trend from 'react-trend';
+
 import { Line } from 'react-chartjs-2';
+
+
 
 
 class KataData extends React.Component {
@@ -15,6 +17,7 @@ class KataData extends React.Component {
         passMessages: [],
         failureMessage: [],
         scores: []
+
     }
 
     getAllData = (newProps) => {
@@ -29,6 +32,7 @@ class KataData extends React.Component {
         }
 
         return fetch(`http://katalystpro-env.eu-west-2.elasticbeanstalk.com/api/users/${username}/katas/${kataname}/test`)
+
             .then((data) => {
                 return data.json()
             })
@@ -57,6 +61,37 @@ class KataData extends React.Component {
                 this.getAllData();
             })
 
+
+        .then((data) => {
+            return data.json()
+        })
+        .then((data) => {
+        console.log(data)
+           return this.setState({
+                tests: data.stats.tests,
+                passes: data.stats.passes,
+                fails: data.stats.failures,
+                passMessages: data.passes,
+                failureMessage: data.failures
+
+            })
+    }
+
+   componentDidMount() {
+        this.getUserScores()
+        .then(()=> {
+            this.getAllData()
+        })
+    }
+ 
+
+    componentWillReceiveProps(newProps) {
+        this.getUserScores(newProps)
+        .then(() => {
+            this.getAllData();
+        })
+    
+
     }
 
     getUserScores = (props) => {
@@ -68,6 +103,7 @@ class KataData extends React.Component {
             username = props.match.params.username
             kataname = props.match.params.kata_name
         }
+
 
         return fetch(`http://katalystpro-env.eu-west-2.elasticbeanstalk.com/api/users`)
             .then((res) => res.json())
@@ -88,6 +124,21 @@ class KataData extends React.Component {
         }
         return filteredArr
     }
+
+  
+        return fetch(`http://katalystpro-env.eu-west-2.elasticbeanstalk.com/api/users`)
+            .then((res) => res.json())
+            .then((userKatas) => {
+              return userKatas[username][kataname].map((score) => {
+                  return Number(score.match(/(\d+)(?!.*\d)/)[0])
+              })
+            })
+            .then((scores) => {
+                console.log(scores)
+            return this.setState({scores})
+            })
+    }
+
 
     render() {
         let kataname = this.props.match.params.kata_name;
@@ -119,7 +170,9 @@ class KataData extends React.Component {
         return (
             <div className="results">
                 <div className='resultsTitle'>
+
                     <h4 className='testTitle'>{kataname} test data</h4>
+
                 </div>
 
                 <div className='circleDivA'>
@@ -150,6 +203,7 @@ class KataData extends React.Component {
                 </div>
 
                 <div className='graph'>
+
                     <Line data={data}
                         height={300}
                         width={300} />
@@ -158,6 +212,7 @@ class KataData extends React.Component {
 
                 <div className='failBox'>
                     <h6>Here are the tests that you have failed.</h6>
+
                     {this.state.failureMessage.map((fails) => {
                         return (
                             <div className='BoxContent'><i className="fa fa-times-circle fa-lg failed" aria-hidden="true"></i><p>{fails.title}</p></div>
@@ -166,7 +221,9 @@ class KataData extends React.Component {
                 </div>
 
                 <div className='passBox'>
+
                     <h6>Here are the tests that you have passed.</h6>
+
 
                     {this.state.passMessages.map((passes) => {
                         return (
@@ -174,6 +231,9 @@ class KataData extends React.Component {
                         )
                     })}
                 </div>
+
+                
+
             </div>
         )
     }
