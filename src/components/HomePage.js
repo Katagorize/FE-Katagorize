@@ -1,6 +1,5 @@
 import React from 'react';
 import '../css/Home.css'
-import Banner from './Banner';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 
@@ -22,12 +21,18 @@ class HomePage extends React.Component {
           });
     }
 
+    successfulSignUp = () => {
+        this.setState({
+            showSignUp: false,
+            showSignin: true
+        })
+    }
+
     render() {
         return (
             <div className="home">
-              <Banner/>
-              <div className="info" >
-            {this.state.showSignUp ? <SignUp closePopup={this.toggleSignUp.bind(this)}/> : null}
+            <div className="info" >
+            {this.state.showSignUp ? <SignUp closePopup={this.toggleSignUp.bind(this)} successfulSignUp={this.successfulSignUp.bind(this)}/> : null}
             {this.state.showSignin ? <SignIn closePopup={this.toggleSignIn.bind(this)}/> : null}
                     <p className="info-text">How it works</p>
                     <div className="first">

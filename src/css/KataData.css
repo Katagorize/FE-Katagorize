@@ -3,9 +3,12 @@
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 10px;
     grid-auto-rows: minmax(50px, auto);
-    font-size: 35px;
-    background-color: #dde2c6;
+
+    font-size: 45px;
+    color: black;
     height:100%;
+    background-color: #DDE2C6;
+    background-size: cover; 
 
 }
 
@@ -15,11 +18,24 @@
     grid-column-end: 9;
     grid-row-start: 2;
     grid-row-end: 3;
+
+    color: #c31433;
+    font-weight: bold;
+    letter-spacing: 2px;
+    
+     
+  }
+
+  .title h1 {
+    font-size: 45px;
+
   }
 
   .KataList{
     grid-column-start: 2;
-    grid-column-end: 4;
+
+    grid-column-end: 5;
+
     grid-row-start: 3;
     grid-row-end: 14;
 
@@ -31,33 +47,65 @@
 
   .results {
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.253);
-    grid-column-start: 6;
+    grid-column-start: 5;
     grid-column-end: 12;
     grid-row-start: 3;
     grid-row-end: 14;
     padding-right: 10px;
     padding-left: 10px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(50px, auto);
+  }
+
+  .resultsTitle {
+    grid-column-start: 4;
+    grid-column-end: 8;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    color: #c31433;
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 25px;
     
   }
 
+  .graph {
+    grid-column-start: 6;
+    grid-column-end: 12;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    
+   }
+
   .results  p{
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.253);
-    font-size: 10px;
+    font-size: 13px;
     display: block;
-
-
+    font-weight: bold;
   }
 
   .results  h4{
     text-align: center;
+    
   }
 
-  .circleDiv {
-   display: inline-block;
-   width: 30%;
+  .circleDivA {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    width: 450%;
   }
+
+  .circleDivB {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 6;
+    width: 450%;
+   }
 
   .testData {
 
@@ -65,13 +113,11 @@
 
   .testData h6 {
       font-size: 20px;
-      background-color: rgba(0, 0, 0, 0.253);
       text-align: left;
   }
 
   .testData p {
     font-size: 15px;
-    background-color: rgba(0, 0, 0, 0.253);
     text-align: left;
 }
 
@@ -82,71 +128,64 @@
     color: rgb(163, 24, 24);
 }
 
-
-/* //////////////////////////////////////////////////////////////////////////
-
-/* Add a black background color to the top navigation */
-.topnav {
-    grid-column-start: 1;
-    grid-column-end: 13;
-    grid-row-start: 1;
-    grid-row-end: 1;
-    background-color: #333;
-    overflow: hidden;
-    position: fixed; /* Set the navbar to fixed position */
-    top: 0; /* Position the navbar at the top of the page */
-    width: 100%; /* Full width */
-    
+.BoxContent {
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.03);
 
 }
 
-/* Style the links inside the navigation bar */
-.topnav a {
-    float: right;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-
+.BoxContent p {
+  margin-top: 15px;
+  text-align: left;
 }
 
-/* Change the color of links on hover */
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
-}
-
-/* Add an active class to highlight the current page */
-.active {
-    background-color: rgba(21, 124, 24, 0.623);
-    color: white;
-}
-
-/* Hide the link that should open and close the topnav on small screens */
-.topnav .icon {
-    display: none;
-}
 
 .failBox{
-    
+    grid-column-start: 1;
+    grid-column-end: 6;
+    grid-row-start: 6;
+    grid-row-end: 15;
 }
 
-.failBox i{
+.failBox .failed{
     color: tomato;
-    font-size: 15px;
     float:left;
     padding-right: 15px;
+}
+
+.failBox h6 {
+  font-size: 15px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.failBox p {
+  font-size: 13px;
+  padding-bottom: 10px;
+  font-weight: bold;
 }
 
 .passBox{
-    
+    grid-column-start: 7;
+    grid-column-end: 13;
+    grid-row-start: 6;
+    grid-row-end: 15; 
 }
 
-.passBox i{
+.passed{
     color: olivedrab;
-    font-size: 15px;
     float:left;
     padding-right: 15px;
+}
 
+.passBox h6 {
+  font-size: 15px;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+
+.passBox p {
+  font-size: 13px;
+  padding-bottom: 10px;
+  font-weight: bold;
 }
