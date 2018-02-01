@@ -30,6 +30,7 @@ class KataData extends React.Component {
             return data.json()
         })
         .then((data) => {
+        console.log(data)
            return this.setState({
                 tests: data.stats.tests,
                 passes: data.stats.passes,
