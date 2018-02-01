@@ -80,8 +80,17 @@ class KataData extends React.Component {
             return this.setState({scores})
             })
     }
+     removeDuplicates = (arr) => {
+        const filteredArr = []
+        for(let i = 0; i < arr.length; i++){
+          if(i === 0) filteredArr.push(arr[i])
+          else if(arr[i] !== arr[i - 1]) filteredArr.push(arr[i])
+        }
+        return filteredArr
+      }
 
     render() {
+        
         const data = {
             labels: this.state.scores.slice(-15),
             datasets: [
@@ -104,7 +113,7 @@ class KataData extends React.Component {
                   pointHoverBorderWidth: 2,
                   pointRadius: 1,
                   pointHitRadius: 10,
-                  data: this.state.scores.slice(-15)
+                  data: this.removeDuplicates(this.state.scores)
                 }
               ]
         }
