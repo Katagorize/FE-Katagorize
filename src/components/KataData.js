@@ -171,23 +171,28 @@ class KataData extends React.Component {
                 <div className='failBox'>
                     <h6>Here are the tests that you have failed.</h6>
 
-                    {this.state.failureMessage.map((fails) => {
+                    {this.state.failureMessage.length ? 
+
+                    this.state.failureMessage.map((fails) => {
                         return (
                             <div className='BoxContent'><i className="fa fa-times-circle fa-lg failed" aria-hidden="true"></i><p>{fails.title}</p></div>
                         )
-                    })}
+                    }) : <div className='BoxContent'><i className="far fa-smile fa-lg " aria-hidden="true"></i><p className='BoxContent'>Amazing! You haven't failed a single test, great work!</p></div> }
                 </div>
 
+
                 <div className='passBox'>
+                <h6>Here are the tests that you have passed.</h6>
+                
+                {this.state.passMessages.length ? 
 
-                    <h6>Here are the tests that you have passed.</h6>
+                this.state.passMessages.map((passes) => {
+                    return (
+                        <div className='BoxContent'><i className="fa fa-check fa-lg passed" aria-hidden="true"></i><p>{passes.title}</p></div>
+                    )
+                }) : <div className='BoxContent'><i className="far fa-frown fa-lg " aria-hidden="true"></i><p className='BoxContent'>You haven't passed any tests yet! Don't worry though, practise makes perfect.</p></div> }
 
-
-                    {this.state.passMessages.map((passes) => {
-                        return (
-                            <div className='BoxContent'><i className="fa fa-check fa-lg passed" aria-hidden="true"></i><p>{passes.title}</p></div>
-                        )
-                    })}
+                
                 </div>
             </div>
         )
@@ -196,3 +201,5 @@ class KataData extends React.Component {
 }
 
 export default KataData;
+
+
