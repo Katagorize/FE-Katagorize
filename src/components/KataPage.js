@@ -12,6 +12,9 @@ import {
     AccordionItemBody,
 } from 'react-accessible-accordion';
 import '../css/KataList.css';
+import Progress from 'react-progressbar';
+
+
 
 
 class KataPage extends React.Component {
@@ -46,7 +49,7 @@ class KataPage extends React.Component {
     }
 
     render() {
-
+console.log(this.state.katas)
         return (
             <div>
                 <div className='KataPage'>
@@ -64,20 +67,25 @@ class KataPage extends React.Component {
                                         </AccordionItemTitle>
                                         <AccordionItemBody>
                                             <div>
-                                                {katasByWeek.map((kata,i) => {
+                                                {katasByWeek.map((kata, i) => {
                                                     console.log(kata.title)
                                                     console.log(this.props.match)
                                                     if (this.state.katas.includes(kata.title)) {
                                                         let currentKata = '';
-                                                        if(kata.title === this.props.match.params.kata_name) {
+                                                        if (kata.title === this.props.match.params.kata_name) {
                                                             currentKata = 'kata-name'
                                                         }
                                                         return (
-                                                            <Link to={`/users/${this.state.userName}/${kata.title}`} onClick={() => { this.setState({ hasClickedOnKata: true }) }}><div className={`kata enabled-kata ${currentKata}`}><p>{kata.title}</p></div></Link>
+                                                            <div>
+                                                                <Link to={`/users/${this.state.userName}/${kata.title}`} onClick={() => { this.setState({ hasClickedOnKata: true }) }}><div className={`kata enabled-kata ${currentKata}`}><p>{kata.title}</p></div></Link>
+                                                                <Progress completed={75} />
+                                                            </div>
                                                         )
                                                     } else {
                                                         return (
+
                                                             <div className="disabled-kata"><p key={i}>{kata.title}</p></div>
+
                                                         )
                                                     }
                                                 })}
