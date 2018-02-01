@@ -2,7 +2,8 @@ import React from 'react';
 import '../css/style.css';
 import '../css/KataData.css';
 import CircularProgressbar from 'react-circular-progressbar';
-import Trend from 'react-trend';
+// import Trend from 'react-trend';
+import {Line} from 'react-chartjs-2';
 
 
 class KataData extends React.Component {
@@ -13,7 +14,7 @@ class KataData extends React.Component {
         fails: 0,
         passMessages: [],
         failureMessage: [],
-        scores: [0, 0]
+        scores: []
     }
 
     getAllData = (newProps) => {
@@ -76,12 +77,37 @@ class KataData extends React.Component {
               })
             })
             .then((scores) => {
-                console.log(scores)
             return this.setState({scores})
             })
     }
 
     render() {
+        const data = {
+            labels: this.state.scores.slice(-15),
+            datasets: [
+                {
+                  label: 'Scores for each test',
+                  fill: false,
+                  lineTension: 0.1,
+                  backgroundColor: 'rgba(75,192,192,0.4)',
+                  borderColor: 'rgba(75,192,192,1)',
+                  borderCapStyle: 'butt',
+                  borderDash: [],
+                  borderDashOffset: 0.0,
+                  borderJoinStyle: 'miter',
+                  pointBorderColor: 'rgba(75,192,192,1)',
+                  pointBackgroundColor: '#fff',
+                  pointBorderWidth: 1,
+                  pointHoverRadius: 5,
+                  pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+                  pointHoverBorderColor: 'rgba(220,220,220,1)',
+                  pointHoverBorderWidth: 2,
+                  pointRadius: 1,
+                  pointHitRadius: 10,
+                  data: this.state.scores.slice(-15)
+                }
+              ]
+        }
         return (
             <div className="results">
                 <div className='resultsTitle'>
@@ -117,15 +143,19 @@ class KataData extends React.Component {
 
                 <div className='graph'>
 
-                    <h4>Scores for each test.</h4>
-                    <Trend data={this.state.scores}
+                    {/* <h4>Scores for each test.</h4> */}
+                    {/* <Trend data={this.state.scores}
                         autoDraw
                         autoDrawDuration={4000}
                         autoDrawEasing="ease-out" 
                         gradient={['#C31433', '#395E66', '#083D77', '#DDE2C6']}
                         width={300} 
                         height={250}
-                        strokeWidth={4}/>
+                        strokeWidth={4}/> */}
+
+                        <Line data={data}
+                        height={300}
+                        width={300} />
                     <p>This graph shows the highs and lows of your scores, you should be aiming high. The straighter the line, the more consistent you are with your code. </p>    
                 </div>
 
