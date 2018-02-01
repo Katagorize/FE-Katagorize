@@ -143,9 +143,8 @@ class KataPage extends React.Component {
                         </Accordion>
                     </div>
 
-                    {!this.state.hasClickedOnKata && <Dashboard username={this.props.match.params.username} />}
-                    {this.state.hasClickedOnKata && <Route path="/users/:username/:kata_name" component={KataData} />
-                    }
+                    <Route exact path="/users/:username" render={(p) =>  <Dashboard {...p} username={this.props.match.params.username}/>} />
+                    <Route exact path="/users/:username/:kata_name" component={KataData} />
 
                 </div>
             </div>

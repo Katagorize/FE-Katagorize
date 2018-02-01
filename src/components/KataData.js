@@ -62,7 +62,7 @@ class KataData extends React.Component {
         this.getUserScores(newProps)
 
             .then(() => {
-                this.getAllData();
+                this.getAllData(newProps);
             })
     }
 

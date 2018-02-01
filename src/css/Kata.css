@@ -22,11 +22,7 @@
   .KataList{
     grid-column-start: 2;
     grid-column-end: 6;
-<<<<<<< HEAD
-    grid-row-start: 1;
-=======
     grid-row-start: 2;
->>>>>>> dashboard setup
     grid-row-end: 14;
   }
 
@@ -45,9 +41,10 @@
     grid-column-end: 12;
     grid-row-start: 2;
     grid-row-end: 14;
-    padding-right: 10px;
-    padding-left: 10px;
+    /* padding-right: 10px;
+    padding-left: 10px; */
     background-color: rgba(0, 0, 0, 0.075);
+    overflow: hidden;
 
     
   }
