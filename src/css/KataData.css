@@ -142,8 +142,8 @@
 .failBox{
     grid-column-start: 1;
     grid-column-end: 6;
-    grid-row-start: 5;
-    grid-row-end: 14;
+    grid-row-start: 6;
+    grid-row-end: 15;
 }
 
 .failBox .failed{
@@ -167,8 +167,8 @@
 .passBox{
     grid-column-start: 7;
     grid-column-end: 13;
-    grid-row-start: 5;
-    grid-row-end: 14; 
+    grid-row-start: 6;
+    grid-row-end: 15; 
 }
 
 .passed{

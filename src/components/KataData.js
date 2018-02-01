@@ -82,7 +82,6 @@ class KataData extends React.Component {
     }
 
     render() {
-        console.log(this.state.scores)
         return (
             <div className="results">
                 <div className='resultsTitle'>
