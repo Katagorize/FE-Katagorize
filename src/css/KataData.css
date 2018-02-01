@@ -23,7 +23,11 @@
     grid-row-start: 3;
     grid-row-end: 14;
 
+<<<<<<< HEAD
     background-color: rgba(57, 94, 102, 0.835);
+=======
+    /* background-color: rgba(57, 94, 102, 0.835); */
+>>>>>>> katalist
     border-radius: 5px
   }
 
