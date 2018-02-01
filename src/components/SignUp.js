@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router'
 
 class SignUp extends Component {
   state = {
     username: '',
     password: '',
     user_image: 'https://cdn1.iconfinder.com/data/icons/simple-icons/256/github-256-black.png',
-    redirect: false,
     disabled: true,
     passwordCheck: '',
     usernameCheck: false,
@@ -79,10 +77,10 @@ class SignUp extends Component {
             exists: 'user already exists'
           })
         }
-        else this.setState({
-          redirect: true,
-          exists: ''
-        })
+        else {
+          this.props.successfulSignUp()
+        }
+        
       })
   }
 
@@ -112,7 +110,6 @@ class SignUp extends Component {
                 </div>
                 <button type="submit" className="btn btn-primary" disabled={this.state.disabled}>sign up</button>
               </form>
-              {this.state.redirect && <Redirect to={`/signin`} />}
             </div>
 
           </div>
