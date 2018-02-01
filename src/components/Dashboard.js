@@ -1,6 +1,7 @@
 import React from 'react';
-import '../css/OverallStyle.css';
-import '../css/Kata.css';
+// import '../css/OverallStyle.css';
+import '../css/Dashboard.css'
+// import '../css/Kata.css';
 import CircularProgressbar from 'react-circular-progressbar';
 import moment from 'moment';
 
@@ -60,10 +61,12 @@ class Dashboard extends React.Component {
     render() {
         return (
             <div className="results">
-                <h4>Kata progress</h4>
+            <div className="greeting">
+                <p>Kata progress</p>
+            </div>
 
 
-                <div className='circleDiv'>
+                {/* <div className='circleDiv'>
                     <CircularProgressbar 
                         percentage={100 / this.state.availableKatas.length * this.state.completedKatas}
                         strokeWidth={5}
@@ -77,18 +80,18 @@ class Dashboard extends React.Component {
                         }}
                     />
                     <p>Katas Complete</p>
-                </div>
+                </div> */}
 
 
 
-
+{/* 
                 <div className='todo'>
                     <h4>Todo</h4>
                     <ul>
                         {this.state.incompleteKatas.map((kata) => <li><p>{kata}</p></li>)}
                     </ul>
-                </div>
-            </div>
+                </div>*/}
+            </div> 
         )
     }
 

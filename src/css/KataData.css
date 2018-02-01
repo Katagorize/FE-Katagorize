@@ -22,8 +22,7 @@
     color: #c31433;
     font-weight: bold;
     letter-spacing: 2px;
-    
-     
+   
   }
 
   .title h1 {
@@ -35,8 +34,7 @@
     grid-column-start: 2;
 
     grid-column-end: 5;
-
-    grid-row-start: 3;
+    grid-row-start: 2;
     grid-row-end: 14;
     background-color: rgba(57, 94, 102, 0.835);
     border-radius: 5px;
@@ -44,12 +42,11 @@
     height: 760px;
   }
 
-
   .results {
     text-align: center;
     grid-column-start: 5;
     grid-column-end: 12;
-    grid-row-start: 3;
+    grid-row-start: 2;
     grid-row-end: 14;
     padding-right: 10px;
     padding-left: 10px;

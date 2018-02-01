@@ -1,6 +1,6 @@
 import React from 'react';
 import '../css/style.css';
-import '../css/Kata.css';
+// import '../css/Kata.css';
 import KataData from './KataData';
 import Dashboard from './Dashboard';
 import { Route, Link } from "react-router-dom";
@@ -12,7 +12,7 @@ import {
     AccordionItemBody,
 } from 'react-accessible-accordion';
 import '../css/KataList.css';
-
+import Progress from 'react-progressbar';
 
 class KataPage extends React.Component {
 
@@ -74,6 +74,9 @@ class KataPage extends React.Component {
             <div>
                 <div className='KataPage'>
 
+                    <div className='title'>
+                        {/* <h2>{`${this.props.match.params.username}'s Kata testing area`}</h2> */}
+                    </div>
                     <div className='KataList'>
                         <Accordion activeItems={[0]}>
                             {this.state.allKatas.map((katasByWeek, i) => {
