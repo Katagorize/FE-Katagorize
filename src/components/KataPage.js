@@ -4,66 +4,95 @@ import '../css/Kata.css';
 import KataData from './KataData';
 import Dashboard from './Dashboard';
 import { Route, Link } from "react-router-dom";
+import allKatas from '../data/allKatas'
+import {
+    Accordion,
+    AccordionItem,
+    AccordionItemTitle,
+    AccordionItemBody,
+} from 'react-accessible-accordion';
+import '../css/KataList.css';
 
 
 class KataPage extends React.Component {
 
     state = {
         katas: [],
+        allKatas: allKatas,
         userName: this.props.match.params.username,
         kataName: this.props.match.kata_name,
         hasClickedOnKata: false
     }
 
-    fetchKataList () {
+    fetchKataList() {
         return fetch(`http://katalystpro-env.eu-west-2.elasticbeanstalk.com/api/users/${this.props.match.params.username}`)
-        .then((katas) => {
-           return katas.json()
-        })
-        .then((katas) => {
-            
-            this.setState({
-                katas: katas.katas
+            .then((katas) => {
+                return katas.json()
             })
-        })
+            .then((katas) => {
+                return katas.katas.map(kata => {
+                    return kata.name
+                })
+            }).then(kataNames => {
+                this.setState({
+                    katas: kataNames
+                })
+            })
     }
 
 
-componentDidMount() {
-     this.fetchKataList();
-}
+    componentDidMount() {
+        this.fetchKataList();
+    }
 
     render() {
-        
+
         return (
             <div>
-
                 <div className='KataPage'>
 
                     <div className='title'>
                         <h2>{`${this.props.match.params.username}'s Kata testing area`}</h2>
-
                     </div>
-
-
                     <div className='KataList'>
-
-                    <h3>Completed Katas</h3>
-                    {this.state.katas.map((kata) => {
-                        
-                       return (
-
-                        <li><Link to={`/users/${this.state.userName}/${kata.name}`} onClick={() => {this.setState({hasClickedOnKata: true})}}>{kata.name}</Link></li>
-                        
-                       )
-                        })}
+                        <Accordion activeItems={[0]}>
+                            {this.state.allKatas.map((katasByWeek, i) => {
+                                return (
+                                    <AccordionItem>
+                                        <AccordionItemTitle>
+                                            <div key={i}><p>Week {i + 1}</p></div>
+                                        </AccordionItemTitle>
+                                        <AccordionItemBody>
+                                            <div>
+                                                {katasByWeek.map((kata,i) => {
+                                                    console.log(kata.title)
+                                                    console.log(this.props.match)
+                                                    if (this.state.katas.includes(kata.title)) {
+                                                        let currentKata = '';
+                                                        if(kata.title === this.props.match.params.kata_name) {
+                                                            currentKata = 'kata-name'
+                                                        }
+                                                        return (
+                                                            <Link to={`/users/${this.state.userName}/${kata.title}`} onClick={() => { this.setState({ hasClickedOnKata: true }) }}><div className={`kata enabled-kata ${currentKata}`}><p>{kata.title}</p></div></Link>
+                                                        )
+                                                    } else {
+                                                        return (
+                                                            <div className="disabled-kata"><p key={i}>{kata.title}</p></div>
+                                                        )
+                                                    }
+                                                })}
+                                            </div>
+                                        </AccordionItemBody>
+                                    </AccordionItem>
+                                )
+                            })}
+                        </Accordion>
                     </div>
-               
-                    {!this.state.hasClickedOnKata &&  <Dashboard username={this.props.match.params.username}/>}
-                    {this.state.hasClickedOnKata &&   <Route path="/users/:username/:kata_name" component={KataData}/>
-}
 
-                   
+                    {!this.state.hasClickedOnKata && <Dashboard username={this.props.match.params.username} />}
+                    {this.state.hasClickedOnKata && <Route path="/users/:username/:kata_name" component={KataData} />
+                    }
+
                 </div>
             </div>
         )
