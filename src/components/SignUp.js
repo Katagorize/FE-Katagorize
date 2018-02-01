@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router'
 
 class SignUp extends Component {
   state = {
     username: '',
     password: '',
     user_image: 'https://cdn1.iconfinder.com/data/icons/simple-icons/256/github-256-black.png',
-    redirect: false,
     disabled: true,
     passwordCheck: '',
     usernameCheck: false,
