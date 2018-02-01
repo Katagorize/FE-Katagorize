@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Redirect } from 'react-router'
 
-class SignIn extends Component {
+class SignIn extends React.Component {
   state = {
     username: '',
     password: '',
@@ -35,7 +35,7 @@ class SignIn extends Component {
    }) 
    .then(buffer => buffer.json())
    .then(userData=>{
-     
+     console.log(userData)
      if(userData && this.state.username === userData.username) {
        this.setState({
          validUser: true,
@@ -54,9 +54,12 @@ class SignIn extends Component {
     this.setState({ redirect: true })
   }
 
-
   render() {
     return (
+      <div className='popup'>
+        <div className='popup_inner'>
+        <div className="exit" style={{float:'right'}}><button onClick={this.props.closePopup}>x</button>
+        </div>
         <div className="loginForm">
           <div >
             <form className='signinForm' onSubmit={this.submitForm}>
@@ -64,9 +67,9 @@ class SignIn extends Component {
               <img alt='avatar url' src={this.state.user_image} style={{ height: '75px', backgroundColor: 'rgba(255, 255, 255, 0.233)', borderRadius: '50%' }} />
 
               <div className="form-group">
-                <label>Github username</label>
+                <label>Github Username</label>
                 <input type="username" className="form-control" placeholder="github username" value={this.state.username} onChange={this.changeUsernameValue} />
-                <small className="form-text text-muted">Github username</small>
+                <small className="form-text text-muted">Github Username</small>
               </div>
               <div className="form-group">
                 <label>Password</label>
@@ -75,7 +78,7 @@ class SignIn extends Component {
 
                   <p>{this.state.passwordCheck}</p>
                 </div>
-                <small className="form-text text-muted">your password</small>
+                <small className="form-text text-muted">Your password</small>
               </div>
 
               <button type="submit" className="btn btn-primary" disabled={this.state.disabled}>sign in</button>
@@ -84,7 +87,9 @@ class SignIn extends Component {
             {this.state.redirect && <Redirect to={`/users/${this.state.username}`} />}
           </div>
         </div>
-    )
+        </div>
+      </div>
+    );
   }
 }
 

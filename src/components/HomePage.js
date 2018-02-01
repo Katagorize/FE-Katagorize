@@ -1,14 +1,34 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import '../css/Home.css'
 import Banner from './Banner';
+import SignIn from './SignIn';
+import SignUp from './SignUp';
 
 class HomePage extends React.Component {
+    state = {
+        showSignin: false,
+        showSignUp: false
+    }
+
+    toggleSignIn = () => {
+        this.setState({
+            showSignin: !this.state.showSignin,
+          });
+    }
+
+    toggleSignUp = () => {
+        this.setState({
+            showSignUp: !this.state.showSignUp,
+          });
+    }
+
     render() {
         return (
             <div className="home">
               <Banner/>
-              <div className="info">
+              <div className="info" >
+            {this.state.showSignUp ? <SignUp closePopup={this.toggleSignUp.bind(this)}/> : null}
+            {this.state.showSignin ? <SignIn closePopup={this.toggleSignIn.bind(this)}/> : null}
                     <p className="info-text">How it works</p>
                     <div className="first">
                     <div className="icon">
@@ -34,8 +54,12 @@ class HomePage extends React.Component {
                     </div>
                     <p>Track your progress daily!</p>
                     </div>
-                    <Link to='/signin' className="signin"> Sign in </Link>
-                    <Link to='/signup' className="signup"> Sign Up </Link>
+                    <div className="signin">
+                    <button onClick={this.toggleSignIn.bind(this)}>Sign in</button>
+                    </div>
+                    <div className="signup">
+                    <button onClick={this.toggleSignUp}>Sign up</button>
+                    </div>
               </div>
             </div> 
         )

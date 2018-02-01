@@ -84,20 +84,34 @@
 }
 
 .signin {
-    color: #C31433;
     grid-row-start: 3;
     grid-column-start: 2;
     grid-column-end: 3; 
 }
 
 .signup {
-    color: #C31433;
     grid-row-start: 3;
     grid-column-start: 3;
     grid-column-end: 4; 
 }
 
-a:hover {
-    text-decoration: none;
+.popup {
+    border: 1px solid #395E66;
+    position: relative;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 4; 
+    background-color: white;
+}
+
+button {
+  color:#C31433;
+  background:none;
+  border:none;
+}
+
+button:hover {
     color: #083D77;
 }
+
