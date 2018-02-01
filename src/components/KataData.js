@@ -2,9 +2,7 @@ import React from 'react';
 import '../css/style.css';
 import '../css/KataData.css';
 import CircularProgressbar from 'react-circular-progressbar';
-
 import { Line } from 'react-chartjs-2';
-
 
 
 
@@ -44,6 +42,7 @@ class KataData extends React.Component {
                     passMessages: data.passes,
                     failureMessage: data.failures
                 })
+
             })
     }
 
@@ -57,41 +56,10 @@ class KataData extends React.Component {
 
     componentWillReceiveProps(newProps) {
         this.getUserScores(newProps)
+
             .then(() => {
                 this.getAllData();
             })
-
-
-        .then((data) => {
-            return data.json()
-        })
-        .then((data) => {
-        console.log(data)
-           return this.setState({
-                tests: data.stats.tests,
-                passes: data.stats.passes,
-                fails: data.stats.failures,
-                passMessages: data.passes,
-                failureMessage: data.failures
-
-            })
-    }
-
-   componentDidMount() {
-        this.getUserScores()
-        .then(()=> {
-            this.getAllData()
-        })
-    }
- 
-
-    componentWillReceiveProps(newProps) {
-        this.getUserScores(newProps)
-        .then(() => {
-            this.getAllData();
-        })
-    
-
     }
 
     getUserScores = (props) => {
@@ -125,20 +93,6 @@ class KataData extends React.Component {
         return filteredArr
     }
 
-  
-        return fetch(`http://katalystpro-env.eu-west-2.elasticbeanstalk.com/api/users`)
-            .then((res) => res.json())
-            .then((userKatas) => {
-              return userKatas[username][kataname].map((score) => {
-                  return Number(score.match(/(\d+)(?!.*\d)/)[0])
-              })
-            })
-            .then((scores) => {
-                console.log(scores)
-            return this.setState({scores})
-            })
-    }
-
 
     render() {
         let kataname = this.props.match.params.kata_name;
@@ -170,7 +124,7 @@ class KataData extends React.Component {
         return (
             <div className="results">
                 <div className='resultsTitle'>
-
+          
                     <h4 className='testTitle'>{kataname} test data</h4>
 
                 </div>
@@ -231,9 +185,6 @@ class KataData extends React.Component {
                         )
                     })}
                 </div>
-
-                
-
             </div>
         )
     }
