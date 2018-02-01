@@ -81,3 +81,10 @@ a:hover{
     font-size: 14px;
 }
 
+.progress-bar {
+    padding: 5px;
+}
+
+.progressbar-containter {
+    background-color: red;
+}

@@ -13,7 +13,7 @@
 }
 
 
-.title{
+/* .title{
     text-align: center;
     grid-column-start: 4;
     grid-column-end: 9;
@@ -21,12 +21,12 @@
     grid-row-end: 3;
     color:white;
     
-  }
+  } */
 
   .KataList{
     grid-column-start: 2;
     grid-column-end: 6;
-    grid-row-start: 3;
+    grid-row-start: 1;
     grid-row-end: 14;
   }
 
@@ -43,7 +43,7 @@
     text-align: center;
     grid-column-start: 6;
     grid-column-end: 12;
-    grid-row-start: 3;
+    grid-row-start: 1;
     grid-row-end: 14;
     padding-right: 10px;
     padding-left: 10px;

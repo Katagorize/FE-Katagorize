@@ -42,7 +42,8 @@ class KataData extends React.Component {
                 failureMessage: data.failures
 
             })
-    }
+    })
+}
 
    componentDidMount() {
         this.getUserScores()
