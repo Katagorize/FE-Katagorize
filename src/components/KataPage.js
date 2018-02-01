@@ -12,7 +12,6 @@ import {
     AccordionItemBody,
 } from 'react-accessible-accordion';
 import '../css/KataList.css';
-import Progress from 'react-progressbar';
 
 class KataPage extends React.Component {
 
