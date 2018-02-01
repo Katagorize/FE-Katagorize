@@ -63,7 +63,7 @@ class SignUp extends Component {
   submitForm = (event) => {
     event.preventDefault()
     return fetch(`http://katalystpro-env.eu-west-2.elasticbeanstalk.com/api/users/${this.state.username}`, {
-      method:"POST",
+      method: "POST",
       headers: {
         'Content-Type': 'application/json'
       },
@@ -72,51 +72,51 @@ class SignUp extends Component {
         user_image: this.state.user_image
       })
     })
-    .then((resBuffer) => resBuffer.json())
-    .then((res) => {
-      if (res === 'user already exists') {
-        this.setState({
-          exists: 'user already exists'
+      .then((resBuffer) => resBuffer.json())
+      .then((res) => {
+        if (res === 'user already exists') {
+          this.setState({
+            exists: 'user already exists'
+          })
+        }
+        else this.setState({
+          redirect: true,
+          exists: ''
         })
-      }
-      else this.setState({ 
-        redirect: true ,
-        exists: ''})
-    })
+      })
   }
 
   render() {
-
-    // if (this.state.exists) {
-    //   this.setState({exists: 'user already exists'})
-    // } else {
-    //   this.setState({exists: ''})
-    // }
-    
     return (
-      <div className="loginForm">
-        <div >
-          <form className='signinForm' onSubmit={this.submitForm.bind(this)}>
-            <img alt="user avatar" src={this.state.user_image} style={{ height: '75px', backgroundColor: 'rgba(255, 255, 255, 0.233)', borderRadius: '50%' }} />
-            <div className="form-group">
-              <label for="githubUsername">Github username</label>
-              <input type="username" className="form-control" placeholder="github username" value={this.state.username} onChange={this.changeUsername} onBlur={this.checkGithubUsername} />
-              <p>{this.state.exists}</p>
-              <small className="form-text text-muted">Github username</small>
+      <div className='popup'>
+        <div className='popup_inner'>
+          <div className="exit" style={{ float: 'right' }}><button onClick={this.props.closePopup}>x</button>
+          </div>
+          <div className="loginForm">
+            <div >
+              <form className='signinForm' onSubmit={this.submitForm.bind(this)}>
+                <img alt="user avatar" src={this.state.user_image} style={{ height: '75px', backgroundColor: 'rgba(255, 255, 255, 0.233)', borderRadius: '50%' }} />
+                <div className="form-group">
+                  <label for="githubUsername">Github Username</label>
+                  <input type="username" className="form-control" placeholder="github username" value={this.state.username} onChange={this.changeUsername} onBlur={this.checkGithubUsername} />
+                  <p>{this.state.exists}</p>
+                  <small className="form-text text-muted">Github Username</small>
+                </div>
+                <div className="form-group">
+                  <label for="inputPassword">Password</label>
+                  <div style={{ display: 'flex', flexDirection: 'row' }}>
+                    <input type="password" className="form-control" id="inputPassword" placeholder="password" password={this.state.password} onChange={this.checkPassword} />
+                    <p>{this.state.passwordCheck}</p>
+                  </div>
+                  <small className="form-text text-muted">Your Password</small>
+                </div>
+                <button type="submit" className="btn btn-primary" disabled={this.state.disabled}>sign up</button>
+              </form>
+              {this.state.redirect && <Redirect to={`/signin`} />}
             </div>
-            <div className="form-group">
-              <label for="inputPassword">Password</label>
-              <div style={{ display: 'flex', flexDirection: 'row' }}>
-                <input type="password" className="form-control" id="inputPassword" placeholder="password" password={this.state.password} onChange={this.checkPassword} />
-                <p>{this.state.passwordCheck}</p>
-              </div>
-              <small className="form-text text-muted">your password</small>
-            </div>
-            <button type="submit" className="btn btn-primary" disabled={this.state.disabled}>sign up</button>
-          </form>
-          {this.state.redirect && <Redirect to={`/signin`} />}
-        </div>
 
+          </div>
+        </div>
       </div>
 
     )
