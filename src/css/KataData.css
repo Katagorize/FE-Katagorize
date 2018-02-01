@@ -114,7 +114,17 @@
     color: rgb(163, 24, 24);
 }
 
+.BoxContent {
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.03);
 
+}
+
+.BoxContent p {
+  margin-top: 15px;
+  text-align: left;
+}
+ 
 .failBox{
     grid-column-start: 1;
     grid-column-end: 6;
@@ -122,10 +132,9 @@
     grid-row-end: 14;
 }
 
-.failBox i{
+.failBox .failed{
     color: tomato;
-    font-size: 15px;
-    float:left;
+    float: left;
     padding-right: 15px;
 }
 
@@ -141,10 +150,9 @@
     grid-row-end: 14; 
 }
 
-.passBox i{
+.passBox .passed{
     color: olivedrab;
-    font-size: 15px;
-    float:left;
+    float: left;
     padding-right: 15px;
 }
 
