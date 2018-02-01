@@ -31,6 +31,7 @@ class KataData extends React.Component {
 
         return fetch(`http://katalystpro-env.eu-west-2.elasticbeanstalk.com/api/users/${username}/katas/${kataname}/test`)
 
+
             .then((data) => {
                 return data.json()
             })
@@ -43,8 +44,10 @@ class KataData extends React.Component {
                     failureMessage: data.failures
                 })
 
+
             })
-    }
+    })
+}
 
     componentDidMount() {
         this.getUserScores()

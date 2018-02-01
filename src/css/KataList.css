@@ -68,7 +68,7 @@ a:hover{
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding: 15px 0 10px 5px;
+    padding-top: 15px;
     font-size: 15px;
 }
 
@@ -79,5 +79,22 @@ a:hover{
     color: rgba(255, 255, 255, 0.472);
     padding: 10px 0 10px 5px;
     font-size: 14px;
+}
+
+.progress-div {
+    display: flex;
+    align-items: center;
+    padding: 0 5px 0 5px
+}
+
+.progress-left {
+    height: 10px;
+    background-color: rgba(199, 181, 16, 0.609);
+    border-radius: 20px;
+
+}
+.progress-right {
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.438);
 }
 

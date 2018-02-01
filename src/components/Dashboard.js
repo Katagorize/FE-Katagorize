@@ -34,7 +34,6 @@ class Dashboard extends React.Component {
         return fetch(`http://katalystpro-env.eu-west-2.elasticbeanstalk.com/api/users`)
             .then((res) => res.json())
             .then((userKatas) => {
-                console.log(userKatas)
                 const scores = Object.values(userKatas[this.props.username])
                 const kataNames = Object.keys(userKatas[this.props.username])
                 let incompleteKatas = [];
