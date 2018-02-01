@@ -14,22 +14,21 @@ class App extends Component {
 
 
   render() {
-
     return (
-      <div className = "wrapper">
-                    <Banner/>
+      <div className="wrapper">
+        <Banner />
 
-      <BrowserRouter>
-        <div className="App">
-        {/* <Header/> */}
-        {/* <Switch> */}
-          <Route exact path="/" component={HomePage} />
-          <Route exact path='/signin' component={SignIn}/>
-          <Route exact path='/signup' component={SignUp}/>
-          <Route path="/users/:username" component={KataPage} />
-          {/* </Switch> */}
-        </div>
-      </BrowserRouter>
+        <BrowserRouter>
+          <div className="App">
+            {/* <Header/> */}
+            {/* <Switch> */}
+            <Route exact path="/" component={HomePage} />
+            <Route exact path='/signin' component={SignIn} />
+            <Route exact path='/signup' component={SignUp} />
+            <Route path="/users/:username" component={KataPage} />
+            {/* </Switch> */}
+          </div>
+        </BrowserRouter>
       </div>
     );
   }
