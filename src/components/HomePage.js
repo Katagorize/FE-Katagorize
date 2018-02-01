@@ -41,25 +41,25 @@ class HomePage extends React.Component {
             {this.state.showSignUp ? <SignUp closePopup={this.toggleSignUp.bind(this)} successfulSignUp={this.successfulSignUp.bind(this)} /> : null}
                     {this.state.showSignin ? <SignIn closePopup={this.toggleSignIn.bind(this)} /> : null}
                     <p className="info-text" style={{display: isVisable}}>How it works</p>
-                    <div className="first">
+                    <div className="first" style={{display: isVisable}}>
                         <div className="icon">
                             <i class="fas fa-code-branch"></i>
                         </div>
                         <p>Fork the morning katas repo. New katas will be released every morning!</p>
                     </div>
-                    <div className="second">
+                    <div className="second" style={{display: isVisable}}>
                         <div className="icon">
                             <i class="fab fa-github"></i>
                         </div>
                         <p>Attempt your kata and push it to GitHub.</p>
                     </div>
-                    <div className="third">
+                    <div className="third" style={{display: isVisable}}>
                         <div className="icon">
                             <i class="fas fa-code"></i>
                         </div>
                         <p>Login to Katalyst and test your function.</p>
                     </div>
-                    <div className="fourth">
+                    <div className="fourth" style={{display: isVisable}}>
                         <div className="icon">
                             <i class="fas fa-chart-line"></i>
                         </div>

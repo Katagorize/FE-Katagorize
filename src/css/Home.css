@@ -97,7 +97,19 @@ grid-row-end: 4;
 grid-column-start: 2;
 grid-column-end: 4; 
 background-color: white;
+-webkit-animation: fadeIn 1s;
+animation: fadeIn 1s
 }
+
+@-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+} 
 
 .popup i {
     padding: 10px;
