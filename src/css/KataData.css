@@ -70,6 +70,11 @@
     
   }
 
+  .testTitle {
+    font-size: 25px;
+    padding: 10px;
+  }
+
   .graph {
     grid-column-start: 6;
     grid-column-end: 12;
