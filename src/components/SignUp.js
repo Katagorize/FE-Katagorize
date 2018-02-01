@@ -21,14 +21,14 @@ class SignUp extends Component {
       if (this.state.usernameCheck) disabled = false
       this.setState({
         password: event.target.value,
-        passwordCheck: '✔️',
+        passwordCheck: 'fa fa-check fa-lg passed',
         disabled: disabled
       })
     }
     else {
       this.setState({
         password: event.target.value,
-        passwordCheck: '❌',
+        passwordCheck: 'fa fa-times-circle fa-lg failed',
         disabled: true
       })
     }
@@ -104,11 +104,11 @@ class SignUp extends Component {
                   <label for="inputPassword">Password</label>
                   <div style={{ display: 'flex', flexDirection: 'row' }}>
                     <input type="password" className="form-control" id="inputPassword" placeholder="password" password={this.state.password} onChange={this.checkPassword} />
-                    <p>{this.state.passwordCheck}</p>
+                    <i className={this.state.passwordCheck} aria-hidden="true"></i>
                   </div>
                   <small className="form-text text-muted">Your Password</small>
                 </div>
-                <button type="submit" className="btn btn-primary" disabled={this.state.disabled}>sign up</button>
+                <button type="submit" className="signup-button" disabled={this.state.disabled}>sign up</button>
               </form>
             </div>
 

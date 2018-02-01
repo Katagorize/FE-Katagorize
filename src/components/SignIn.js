@@ -35,7 +35,6 @@ class SignIn extends React.Component {
    }) 
    .then(buffer => buffer.json())
    .then(userData=>{
-     console.log(userData)
      if(userData && this.state.username === userData.username) {
        this.setState({
          validUser: true,
@@ -81,7 +80,7 @@ class SignIn extends React.Component {
                 <small className="form-text text-muted">Your password</small>
               </div>
 
-              <button type="submit" className="btn btn-primary" disabled={this.state.disabled}>sign in</button>
+              <button type="submit" className="signin-button" disabled={this.state.disabled}>sign in</button>
 
             </form>
             {this.state.redirect && <Redirect to={`/users/${this.state.username}`} />}
