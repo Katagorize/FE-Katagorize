@@ -2,7 +2,6 @@ import React from 'react';
 import '../css/style.css';
 import '../css/KataData.css';
 import CircularProgressbar from 'react-circular-progressbar';
-// import Trend from 'react-trend';
 import { Line } from 'react-chartjs-2';
 
 
