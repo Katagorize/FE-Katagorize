@@ -28,17 +28,19 @@ class KataData extends React.Component {
         }
 
         return fetch(`http://katalystpro-env.eu-west-2.elasticbeanstalk.com/api/users/${username}/katas/${kataname}/test`)
-            .then((data) => {
-                return data.json()
-            })
-            .then((data) => {
-                return this.setState({
-                    tests: data.stats.tests,
-                    passes: data.stats.passes,
-                    fails: data.stats.failures,
-                    passMessages: data.passes,
-                    failureMessage: data.failures
-                })
+
+        .then((data) => {
+            return data.json()
+        })
+        .then((data) => {
+        console.log(data)
+           return this.setState({
+                tests: data.stats.tests,
+                passes: data.stats.passes,
+                fails: data.stats.failures,
+                passMessages: data.passes,
+                failureMessage: data.failures
+
             })
     }
 
