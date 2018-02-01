@@ -130,7 +130,6 @@
 
 .BoxContent {
   height: 50px;
-  background-color: rgba(0, 0, 0, 0.03);
 
 }
 
@@ -145,12 +144,14 @@
     grid-column-end: 6;
     grid-row-start: 6;
     grid-row-end: 15;
+    padding-left: 10px;
 }
 
 .failBox .failed{
     color: tomato;
     float:left;
-    padding-right: 15px;
+    padding-right: 17px;
+    
 }
 
 .failBox h6 {
@@ -170,6 +171,7 @@
     grid-column-end: 13;
     grid-row-start: 6;
     grid-row-end: 15; 
+    padding-right: 10px;
 }
 
 .passed{
