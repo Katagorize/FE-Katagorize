@@ -129,7 +129,7 @@ class KataData extends React.Component {
             <div className="results">
                 <div className='resultsTitle'>
           
-                    <h4 className='testTitle'>{kataname} test data</h4>
+                    <h4 className='testTitle' style={{fontWeight: 'bold', paddingTop: '30px'}}>{kataname} Test Data</h4>
 
                 </div>
 
@@ -140,7 +140,7 @@ class KataData extends React.Component {
                         Clockwise
                         initialAnimation={true}
                         textForPercentage={(percentage) => {
-                            return percentage === 100 ? `Woo!!` : `${this.state.passes} / ${this.state.tests}`;
+                            return percentage === 100 ? `${this.state.passes} / ${this.state.tests}` : `${this.state.passes} / ${this.state.tests}`;
                         }}
                         classForPercentage={(percentage) => {
                             return percentage === 100 ? 'complete' : 'incomplete';
