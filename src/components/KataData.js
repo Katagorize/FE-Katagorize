@@ -177,7 +177,7 @@ class KataData extends React.Component {
                         return (
                             <div className='BoxContent'><i className="fa fa-times-circle fa-lg failed" aria-hidden="true"></i><p>{fails.title}</p></div>
                         )
-                    }) : <div className='BoxContent'><i className="far fa-smile fa-lg " aria-hidden="true"></i><p className='BoxContent'>Amazing! You haven't failed a single test, great work!</p></div> }
+                    }) : <div className='BoxContent'><i className="fas fa-star fa-lg " style={{color: 'gold'}} aria-hidden="true"></i><p className='BoxContent'>Amazing! You haven't failed a single test, great work!</p></div> }
                 </div>
 
 
@@ -190,7 +190,7 @@ class KataData extends React.Component {
                     return (
                         <div className='BoxContent'><i className="fa fa-check fa-lg passed" aria-hidden="true"></i><p>{passes.title}</p></div>
                     )
-                }) : <div className='BoxContent'><i className="far fa-frown fa-lg " aria-hidden="true"></i><p className='BoxContent'>You haven't passed any tests yet! Don't worry though, practise makes perfect.</p></div> }
+                }) : <div className='BoxContent'><i className="far fa-frown fa-lg " style={{color: 'tomato'}} aria-hidden="true"></i><p className='BoxContent'>You haven't passed any tests yet! Don't worry though, practise makes perfect.</p></div> }
 
                 
                 </div>
