@@ -12,12 +12,12 @@
      * If you're not using "display: flex", you can remove this style.
      */
      padding-top: 40px;
-    width: 45%;
+    width: 50%;
     
   }
   
   .CircularProgressbar .CircularProgressbar-path{
-    stroke: hsl(135, 75%, 44%);
+    stroke: olivedrab;
     stroke-linecap: round;
     transition: stroke-dashoffset 2s ease 0.3s;
     padding-right: 10px;

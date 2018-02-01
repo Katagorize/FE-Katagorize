@@ -130,24 +130,30 @@ class KataData extends React.Component {
                     <p>This graph shows the highs and lows of your scores, you should be aiming high. The straighter the line, the mosre consistent you are with your code. </p>    
                 </div>
 
+                
+
                 <div className='failBox'>
-                <h6>Here are the tests that you have failed.</h6>
+                <h6>Tests that you have failed.</h6>
                     {this.state.failureMessage.map((fails) => {
                         return (
-                            <span><i className="fa fa-times-circle fa-lg" aria-hidden="true"></i><p>{fails.title}</p></span>
+                            
+                            <div className='BoxContent'><i className="fa fa-times-circle fa-lg failed" aria-hidden="true"></i><p>{fails.title}</p></div>
                         )
                     })}
                 </div>
 
                 <div className='passBox'>
-                <h6>Here are the tests that you have passed.</h6>
+                <h6>The tests that you have passed.</h6>
 
                     {this.state.passMessages.map((passes) => {
                         return (
-                            <span><i className="fa fa-check fa-lg" aria-hidden="true"></i><p>{passes.title}</p></span>
+                            <div className='BoxContent'><i className="fa fa-check fa-lg passed" aria-hidden="true"></i><p>{passes.title}</p></div>
                         )
                     })}
                 </div>
+
+                
+
             </div>
         )
     }
