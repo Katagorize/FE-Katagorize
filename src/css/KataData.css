@@ -118,6 +118,7 @@
   height: 50px;
   background-color: rgba(0, 0, 0, 0.03);
 
+<<<<<<< HEAD
 }
 
 .BoxContent p {
@@ -125,6 +126,8 @@
   text-align: left;
 }
  
+=======
+>>>>>>> 1871de0093f3b4a433735f7a7bae7ae42c7e64ea
 .failBox{
     grid-column-start: 1;
     grid-column-end: 6;
