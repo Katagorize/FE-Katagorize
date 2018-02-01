@@ -4,9 +4,9 @@
     grid-gap: 10px;
     grid-auto-rows: minmax(50px, auto);
     font-size: 35px;
-    color: white;
+    color: black;
     height:100%;
-    background: url('../img/books2.jpg') no-repeat center;
+    background-color: #DDE2C6;
     background-size: cover; 
 }
 
@@ -39,7 +39,6 @@
 
   .results {
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.253);
     grid-column-start: 5;
     grid-column-end: 12;
     grid-row-start: 3;
@@ -69,7 +68,6 @@
 
   .results  p{
     text-align: center;
-    background-color: rgba(0, 0, 0, 0.253);
     font-size: 10px;
     display: block;
   }
@@ -101,13 +99,11 @@
 
   .testData h6 {
       font-size: 20px;
-      background-color: rgba(0, 0, 0, 0.253);
       text-align: left;
   }
 
   .testData p {
     font-size: 15px;
-    background-color: rgba(0, 0, 0, 0.253);
     text-align: left;
 }
 
