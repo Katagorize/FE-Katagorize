@@ -2,8 +2,8 @@
     display: block;
     transition: max-height .5s ease-in;
     max-height:500px;
-    overflow: hidden;
-    transition-delay: 0s
+    transition-delay: 0s;
+
 }
 
 .accordion__body--hidden {
@@ -77,8 +77,8 @@ a:hover{
     align-items: center;
     flex-direction: column;
     color: rgba(255, 255, 255, 0.472);
-    padding: 10px 0 10px 5px;
-    font-size: 14px;
+    padding-top: 15px;
+    font-size: 15px;
 }
 
 .progress-div {
