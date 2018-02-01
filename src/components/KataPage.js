@@ -21,7 +21,7 @@ class KataPage extends React.Component {
         allKatas: allKatas,
         userName: this.props.match.params.username,
         kataName: this.props.match.kata_name,
-        hasClickedOnKata: false
+        hasClickedOnKata: false,
     }
 
     fetchKataList() {
