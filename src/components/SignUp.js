@@ -79,10 +79,10 @@ class SignUp extends Component {
             exists: 'user already exists'
           })
         }
-        else this.setState({
-          redirect: true,
-          exists: ''
-        })
+        else {
+          this.props.successfulSignUp()
+        }
+        
       })
   }
 
@@ -112,7 +112,6 @@ class SignUp extends Component {
                 </div>
                 <button type="submit" className="btn btn-primary" disabled={this.state.disabled}>sign up</button>
               </form>
-              {this.state.redirect && <Redirect to={`/signin`} />}
             </div>
 
           </div>
