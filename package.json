@@ -11,7 +11,9 @@
     "moment": "^2.20.1",
     "react": "^16.2.0",
     "react-chartjs-2": "^2.7.0",
+
     "react-accessible-accordion": "^1.0.2",
+
     "react-circular-progressbar": "^0.6.0",
     "react-dom": "^16.2.0",
     "react-particles-js": "^2.1.0",
