@@ -118,11 +118,7 @@ class KataData extends React.Component {
 
                 <div className='graph'>
 
-<<<<<<< HEAD
                     <h4>Scores for each test.</h4>
-=======
-                    <h4>Scores for each commit.</h4>
->>>>>>> 1871de0093f3b4a433735f7a7bae7ae42c7e64ea
                     <Trend data={this.state.scores}
                         autoDraw
                         autoDrawDuration={4000}
@@ -131,22 +127,14 @@ class KataData extends React.Component {
                         width={300} 
                         height={250}
                         strokeWidth={4}/>
-<<<<<<< HEAD
                     <p>This graph shows the highs and lows of your scores, you should be aiming high. The straighter the line, the more consistent you are with your code. </p>    
-=======
-                    <p>This graph shows the highs and lows of your scores, you should be aiming high. The straighter the line, the mosre consistent you are with your code. </p>    
->>>>>>> 1871de0093f3b4a433735f7a7bae7ae42c7e64ea
                 </div>
 
                 <div className='failBox'>
                 <h6>Here are the tests that you have failed.</h6>
                     {this.state.failureMessage.map((fails) => {
                         return (
-<<<<<<< HEAD
                             <div className='BoxContent'><i className="fa fa-times-circle fa-lg failed" aria-hidden="true"></i><p>{fails.title}</p></div>
-=======
-                            <span><i className="fa fa-times-circle fa-lg" aria-hidden="true"></i><p>{fails.title}</p></span>
->>>>>>> 1871de0093f3b4a433735f7a7bae7ae42c7e64ea
                         )
                     })}
                 </div>
@@ -156,11 +144,7 @@ class KataData extends React.Component {
 
                     {this.state.passMessages.map((passes) => {
                         return (
-<<<<<<< HEAD
                             <div className='BoxContent'><i className="fa fa-check fa-lg passed" aria-hidden="true"></i><p>{passes.title}</p></div>
-=======
-                            <span><i className="fa fa-check fa-lg" aria-hidden="true"></i><p>{passes.title}</p></span>
->>>>>>> 1871de0093f3b4a433735f7a7bae7ae42c7e64ea
                         )
                     })}
                 </div>
